@@ -1,4 +1,4 @@
-# Template: Standard Robot Framework
+# Robocorp: Basic implementation of RPA for Calculator, WebUI and Excel operations
 
 Want to get started using [Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework/basics) this is the simplest template to start from.
 
