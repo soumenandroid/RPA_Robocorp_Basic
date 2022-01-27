@@ -1,0 +1,159 @@
+{
+    "Calculator.Btn0": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn0-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Btn1": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn1-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Btn2": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn2-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Btn3": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn3-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Btn4": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn4-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Btn6": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn6-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Btn8": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn8-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Btn9": {
+        "confidence": 80.0,
+        "path": ".images/calculator-btn9-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Division": {
+        "confidence": 80.0,
+        "path": ".images/calculator-division-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Minus": {
+        "confidence": 80.0,
+        "path": ".images/calculator-minus-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Calculator.Multiply": {
+        "confidence": 80.0,
+        "path": ".images/calculator-multiply-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Sudoku.BlankArea": {
+        "confidence": 80.0,
+        "path": ".images/sudoku-blankarea-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Sudoku.BlankArea_Type1": {
+        "confidence": 80.0,
+        "path": ".images/sudoku-blankarea_type1-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Sudoku.BlankArea_Type2": {
+        "confidence": 80.0,
+        "path": ".images/sudoku-blankarea_type2-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Sudoku.BlankArea_Type3": {
+        "confidence": 80.0,
+        "path": ".images/sudoku-blankarea_type3-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Sudoku.BlankArea_Type4": {
+        "confidence": 80.0,
+        "path": ".images/sudoku-blankarea_type4-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Sudoku.Maximize": {
+        "confidence": 80.0,
+        "path": ".images/sudoku-maximize-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "btn5": {
+        "confidence": 80.0,
+        "path": ".images/btn5-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "btn7_calculator": {
+        "confidence": 80.0,
+        "path": ".images/btn7_calculator-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "btn_easy_sudoku": {
+        "confidence": 80.0,
+        "path": ".images/btn_easy_sudoku-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "btn_equal_calculator": {
+        "confidence": 80.0,
+        "path": ".images/btn_equal_calculator-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "btn_sum_calculator": {
+        "confidence": 80.0,
+        "path": ".images/btn_sum_calculator-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "close_btn": {
+        "confidence": 80.0,
+        "path": ".images/close_btn-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "pycharm_close_btn": {
+        "confidence": 80.0,
+        "path": ".images/pycharm_close_btn-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "pycharmicon": {
+        "confidence": 74.0,
+        "path": ".images/pycharmicon-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "search_txt_box": {
+        "screenshot": ".images/search_txt_box-screenshot.png",
+        "source": "https://www.google.com/?gws_rd=ssl",
+        "strategy": "xpath",
+        "type": "browser",
+        "value": "//input[@name='q']"
+    }
+}

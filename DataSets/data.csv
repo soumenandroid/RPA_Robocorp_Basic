@@ -1,0 +1,3 @@
+Sl_No,TestCase,Result,Comments,TestData
+1,Testcase1,Pass,Working fine,Positive
+2,Testcase2,Fail,Not working,Negative

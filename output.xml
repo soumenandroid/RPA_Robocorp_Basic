@@ -1,0 +1,3231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.5 on linux)" generated="20220127 20:09:56.105" rpa="true" schemaversion="2">
+<suite id="s1" name="Tasks" source="/home/soumen/Robots/FirstRPA/tasks.robot">
+<test id="s1-t1" name="Open Calculator">
+<kw name="Perform calculation" library="desktop_tasks">
+<arg>5678976543217654221567</arg>
+<arg>'*'</arg>
+<arg>2</arg>
+<kw name="Open Application" library="RPA.Desktop">
+<arg>gnome-calculator</arg>
+<doc>Start a given application by name (if in PATH),
+or by path to executable.</doc>
+<msg timestamp="20220127 20:09:56.968" level="INFO">Starting application: gnome-calculator</msg>
+<status status="PASS" starttime="20220127 20:09:56.968" endtime="20220127 20:09:56.971"/>
+</kw>
+<kw name="Wait For Element" library="RPA.Desktop">
+<var>${element}</var>
+<arg>image:.images/btn5-path.png</arg>
+<doc>Wait for an element defined by locator to exist, or
+raise a TimeoutException if none were found within timeout.</doc>
+<msg timestamp="20220127 20:09:56.973" level="INFO">Resolving locator: image:.images/btn5-path.png</msg>
+<msg timestamp="20220127 20:09:56.973" level="INFO">Searching for image '.images/btn5-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:57.188" level="INFO">Found 0 matches</msg>
+<msg timestamp="20220127 20:09:57.473" level="INFO">Resolving locator: image:.images/btn5-path.png</msg>
+<msg timestamp="20220127 20:09:57.474" level="INFO">Searching for image '.images/btn5-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:57.615" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:57.615" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAqCAIAAABgEa+jAAACTklEQVR4nO2ZvYvUQBTAk8zusHCTE3Fjgjn8WO+8LSwsBQ8bS4vbwmJBC8W7P8ADbUQRLOwEhROuEA45sNJCWwsVES20EWSbiLCOZB38IJN13YkzsfBYk7Co6CTZQH5d3sDLL8PLy2RGHQwGStHQ8hb4FwopXUlcM8a63S6llHOei9AIAICu67Zt12q1xJAarekgCDqdjmVZ9XodQpitZBLGGCGk1+s1m81qtTqKB0EQk3Yc5+fD5SE5Hoyx7/uNRmMUcRwnVtOUUsMwMhf7HYZheJ4XjVBKY9Kc89yrIgGEMPF2cc4L2T1K6awopbOilM6K5NrjPwk/3T/bvvoi2LwEu46v3lyaB3JvIl36a38AZtuXzx3ZpiqKosKtM7KNFfnSfd9Xtjf2z81OyU0cQ3JNC+8LrYDhR+KxUG7mKJKl2VCbRq/Xltuto61TF9aff0hlUS65PKYWVtYXVhTu41cPbl1bu3SxcmP1xB7ZZZ1OywPIPtA6s3wYvnny9J2Qnj7FPi1EWmUttTwEfnz7kb9z345ptd99eW/jIZs7eWhG/rzIlf72+e2zu3c23nvf4RZ7/uDSldPHdk96n67sXTx/fVFmxvEUcu1RSmdFKZ0VpXRWxKQBAIyxvFTGwhgDIPZ9AgDEpBFChJBsrf4AIQQhFI0ghGLSpmm6rosxnoT5ZoxhjF3XtSwrGjdNM7bVK4TwfZ8QMgmb6pqm6bpuGIau65r2a3KFEGrioCgMw+FwyDkPwxT/l/4GVVUBABDCqPHmUHm6lRGFlC7k6dYPdMLnjN1xPMsAAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:09:57.615" level="INFO">region:416,390,466,422</msg>
+<msg timestamp="20220127 20:09:57.616" level="INFO">${element} = region:416,390,466,422</msg>
+<status status="PASS" starttime="20220127 20:09:56.972" endtime="20220127 20:09:57.616"/>
+</kw>
+<kw name="Extract Digit From" library="Number">
+<var>${number1_collection}</var>
+<arg>${number1}</arg>
+<msg timestamp="20220127 20:09:57.617" level="INFO">5
+6
+7
+8
+9
+7
+6
+5
+4
+3
+2
+1
+7
+6
+5
+4
+2
+2
+1
+5
+6
+7</msg>
+<msg timestamp="20220127 20:09:57.617" level="INFO">${number1_collection} = ['5', '6', '7', '8', '9', '7', '6', '5', '4', '3', '2', '1', '7', '6', '5', '4', '2', '2', '1', '5', '6', '7']</msg>
+<status status="PASS" starttime="20220127 20:09:57.617" endtime="20220127 20:09:57.617"/>
+</kw>
+<for flavor="IN">
+<var>${num}</var>
+<value>@{number1_collection}</value>
+<iter>
+<var name="${num}">5</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:57.619" level="INFO">Resolving locator: image:.images/btn5-path.png</msg>
+<msg timestamp="20220127 20:09:57.619" level="INFO">Searching for image '.images/btn5-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:57.734" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:57.735" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAqCAIAAABgEa+jAAACTklEQVR4nO2ZvYvUQBTAk8zusHCTE3Fjgjn8WO+8LSwsBQ8bS4vbwmJBC8W7P8ADbUQRLOwEhROuEA45sNJCWwsVES20EWSbiLCOZB38IJN13YkzsfBYk7Co6CTZQH5d3sDLL8PLy2RGHQwGStHQ8hb4FwopXUlcM8a63S6llHOei9AIAICu67Zt12q1xJAarekgCDqdjmVZ9XodQpitZBLGGCGk1+s1m81qtTqKB0EQk3Yc5+fD5SE5Hoyx7/uNRmMUcRwnVtOUUsMwMhf7HYZheJ4XjVBKY9Kc89yrIgGEMPF2cc4L2T1K6awopbOilM6K5NrjPwk/3T/bvvoi2LwEu46v3lyaB3JvIl36a38AZtuXzx3ZpiqKosKtM7KNFfnSfd9Xtjf2z81OyU0cQ3JNC+8LrYDhR+KxUG7mKJKl2VCbRq/Xltuto61TF9aff0hlUS65PKYWVtYXVhTu41cPbl1bu3SxcmP1xB7ZZZ1OywPIPtA6s3wYvnny9J2Qnj7FPi1EWmUttTwEfnz7kb9z345ptd99eW/jIZs7eWhG/rzIlf72+e2zu3c23nvf4RZ7/uDSldPHdk96n67sXTx/fVFmxvEUcu1RSmdFKZ0VpXRWxKQBAIyxvFTGwhgDIPZ9AgDEpBFChJBsrf4AIQQhFI0ghGLSpmm6rosxnoT5ZoxhjF3XtSwrGjdNM7bVK4TwfZ8QMgmb6pqm6bpuGIau65r2a3KFEGrioCgMw+FwyDkPwxT/l/4GVVUBABDCqPHmUHm6lRGFlC7k6dYPdMLnjN1xPMsAAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:09:57.735" level="INFO">region:416,390,466,422</msg>
+<msg timestamp="20220127 20:09:57.736" level="INFO">Moving mouse to (441, 406)</msg>
+<msg timestamp="20220127 20:09:57.837" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:57.619" endtime="20220127 20:09:57.838"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:57.619" endtime="20220127 20:09:57.838"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.839" endtime="20220127 20:09:57.839"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.839" endtime="20220127 20:09:57.839"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.840" endtime="20220127 20:09:57.840"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.839" endtime="20220127 20:09:57.840"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.840" endtime="20220127 20:09:57.840"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.840" endtime="20220127 20:09:57.840"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.841" endtime="20220127 20:09:57.841"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.840" endtime="20220127 20:09:57.841"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.841" endtime="20220127 20:09:57.842"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.841" endtime="20220127 20:09:57.842"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.842" endtime="20220127 20:09:57.842"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.842" endtime="20220127 20:09:57.842"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.843" endtime="20220127 20:09:57.843"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.842" endtime="20220127 20:09:57.843"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.843" endtime="20220127 20:09:57.843"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.843" endtime="20220127 20:09:57.844"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.844" endtime="20220127 20:09:57.844"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.844" endtime="20220127 20:09:57.844"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.844" endtime="20220127 20:09:57.845"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.844" endtime="20220127 20:09:57.845"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.845" endtime="20220127 20:09:57.845"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.845" endtime="20220127 20:09:57.845"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.846" endtime="20220127 20:09:57.846"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.845" endtime="20220127 20:09:57.846"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.846" endtime="20220127 20:09:57.846"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.846" endtime="20220127 20:09:57.846"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:57.618" endtime="20220127 20:09:57.846"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:57.618" endtime="20220127 20:09:57.847"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:57.618" endtime="20220127 20:09:57.847"/>
+</iter>
+<iter>
+<var name="${num}">6</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.848" endtime="20220127 20:09:57.848"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.848" endtime="20220127 20:09:57.848"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.849" endtime="20220127 20:09:57.849"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.848" endtime="20220127 20:09:57.849"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.849" endtime="20220127 20:09:57.849"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.849" endtime="20220127 20:09:57.849"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.850" endtime="20220127 20:09:57.850"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.849" endtime="20220127 20:09:57.850"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:57.850" endtime="20220127 20:09:57.850"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:57.850" endtime="20220127 20:09:57.850"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:57.851" level="INFO">Resolving locator: alias:Calculator.Btn6</msg>
+<msg timestamp="20220127 20:09:57.852" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn6-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:58.036" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:58.037" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAuCAIAAAADYBZCAAAChUlEQVR4nO2ZTWjTYBjH3482tJBMD3nbaGBsEUcHoocJjoGnIYLFD9DDFMtuongQ3G2oDJR59Gsoc+BlIIPB9LKL6GWHHTxM2ApWh6tQgmmzaUlSa16XxsO0xOqYM+9IB/kd/4Qnv+TheSF5YKlUyufzkiQRQjiOA4FCKdV1XdM0RVF4nq/nsFKpWJal67ppmo7jBKgIAEAICYJACBEEASFUz2G1WnVd17Ztx3Fc1w1QEQAAIcQYcxznVQRrlkE5/Tto40uagO1hGQEAUEoLhUIzTA/GWBAEWZZjsZg3h4Zh5HI5SZJEUWySk6hYLKZSqWg0Ws9hNptd0w9QrgFVVS3LUhSlniDTNAkhATr9CSHEMAxvghzHCbzRDXAc1zAh22PGQ0t2hJbsCC3ZEWFUxym/ezU19WJ2frEk9o3cO9vK9PGZWNofng1dG1/uTKfPD/TvSshJ1h1iYPlt4cmtCZx58PCYHN346v/Ct6VbnpmY/oTl6cFzo59XW9q7T164eHrfDshCro5vy9Xcm6ydOHik78T+3XFzYfL+o8Hb8bHhNNOu+63lWisrVdTWkz58oGNPR9epK/3dtbmXs8s1Jna/8GsJo5EIdE3T+qkVI8kWUC4bbD9Gffcl3tYuuUvZt18BAADUyh+XvkRkOcF2yn1Xw3uPpju/z4zdfT63+P715J3x+Z29x3uEJpsegFrP3Lhpj4w+vX65DMVU79XhS4d4tpJMTnUkdmWGHmcYVFr3DltYmx2hJTtCS3aEluxAGGNKadAav0EpxRh7E8TzvK7rQQn9FV3Xvb/+AQAomUxqmqaqajO8UUqpqqqapkmS5M3DHcXmCXcUW8/2sAx3FJtnvR3FD0WiHVT2WOQsAAAAAElFTkSuQmCC" &gt;</msg>
+<msg timestamp="20220127 20:09:58.037" level="INFO">region:475,388,520,424</msg>
+<msg timestamp="20220127 20:09:58.038" level="INFO">Moving mouse to (497, 406)</msg>
+<msg timestamp="20220127 20:09:58.139" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:57.850" endtime="20220127 20:09:58.140"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:57.850" endtime="20220127 20:09:58.142"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.142" endtime="20220127 20:09:58.143"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.142" endtime="20220127 20:09:58.143"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.143" endtime="20220127 20:09:58.143"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.143" endtime="20220127 20:09:58.143"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.143" endtime="20220127 20:09:58.144"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.143" endtime="20220127 20:09:58.144"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.144" endtime="20220127 20:09:58.144"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.144" endtime="20220127 20:09:58.144"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.144" endtime="20220127 20:09:58.145"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.144" endtime="20220127 20:09:58.145"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.145" endtime="20220127 20:09:58.145"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.145" endtime="20220127 20:09:58.145"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.145" endtime="20220127 20:09:58.145"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.145" endtime="20220127 20:09:58.145"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.146" endtime="20220127 20:09:58.146"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.145" endtime="20220127 20:09:58.146"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:57.848" endtime="20220127 20:09:58.146"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:57.847" endtime="20220127 20:09:58.146"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:57.847" endtime="20220127 20:09:58.146"/>
+</iter>
+<iter>
+<var name="${num}">7</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.148" endtime="20220127 20:09:58.148"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.148" endtime="20220127 20:09:58.148"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.148" endtime="20220127 20:09:58.149"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.148" endtime="20220127 20:09:58.149"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.149" endtime="20220127 20:09:58.149"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.149" endtime="20220127 20:09:58.149"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.149" endtime="20220127 20:09:58.149"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.149" endtime="20220127 20:09:58.149"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.150" endtime="20220127 20:09:58.150"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.149" endtime="20220127 20:09:58.150"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.150" endtime="20220127 20:09:58.150"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.150" endtime="20220127 20:09:58.150"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:58.151" level="INFO">Resolving locator: alias:btn7_calculator</msg>
+<msg timestamp="20220127 20:09:58.151" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/btn7_calculator-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:58.355" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:58.356" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAArCAIAAACmUwxBAAACIElEQVR4nO2ZPWwTMRhA786JleGsqjRuTtyCQoGAYClIDEWV+BFLl3ZnqDplYWRFYkNCYmFhQ0Id6FikDgUhhY0yMkQZyMLh5iIPSLlTozi1jyFS7AZKobK5nHRvOn/yWe/sz/bJtvv9vpUdnLQF/o1c1yQFtcAYC4IgiiLOeVpCIwAACCHf90ulkhq3x1NtOBy2Wi3P88rlMoQwDUkJY4xS2u12a7VasVgcx6Vuu90efVBKhr+BEBLHcbVaHUdk7kZRhDFOw+pYMMa9Xk+NSF3Oeeo5MAGEcGIWZWxlyHVNkuuaJNc1SeHkKn+HIFsP1182D9UYXH68/eR26bhXToE2XQffe/Ti2oEYlXjn/fNnjfkbFzXvO9p0LTh3rjY3ehSdt68+/FisP13xNSebgdxNok+vN7/Mr23cr2hvXb+u2N990zi89WD1vL6RG6Ndl7d3d1pn7q4uzdi6m7b06/KvjY/EW75zuXhy3VOgWVcEe587s9dvLhhIBMvSrZv0ms0AXLp6wUzf6tbl+9++i7J/VufOcAS9g1a4Ut98V9fa5FEy9s+Q65ok1zVJrmsSqQsAYIylqPIrjDEAgBqRuq7rUkr/u9KfoJS6rqtGpG6lUgnDkBAyDX3MGCOEhGHoeZ4alwemQog4jiml03Ac7TgOQghjjBByHNmntnrzkyTJYDDgnCdJkoakxLZtAACEUHW1JnSnn8wuZJkgYzc/PwHaksSsuPuFdAAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:09:58.356" level="INFO">region:362,352,410,385</msg>
+<msg timestamp="20220127 20:09:58.357" level="INFO">Moving mouse to (386, 368)</msg>
+<msg timestamp="20220127 20:09:58.458" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:58.150" endtime="20220127 20:09:58.459"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:58.150" endtime="20220127 20:09:58.460"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.460" endtime="20220127 20:09:58.460"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.460" endtime="20220127 20:09:58.460"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.461" endtime="20220127 20:09:58.461"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.460" endtime="20220127 20:09:58.461"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.461" endtime="20220127 20:09:58.461"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.461" endtime="20220127 20:09:58.461"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.461" endtime="20220127 20:09:58.461"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.461" endtime="20220127 20:09:58.462"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.462" endtime="20220127 20:09:58.462"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.462" endtime="20220127 20:09:58.462"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.462" endtime="20220127 20:09:58.462"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.462" endtime="20220127 20:09:58.462"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.462" endtime="20220127 20:09:58.462"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.462" endtime="20220127 20:09:58.462"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:58.147" endtime="20220127 20:09:58.462"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:58.146" endtime="20220127 20:09:58.463"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:58.146" endtime="20220127 20:09:58.463"/>
+</iter>
+<iter>
+<var name="${num}">8</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.464" endtime="20220127 20:09:58.464"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.464" endtime="20220127 20:09:58.464"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.464" endtime="20220127 20:09:58.464"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.464" endtime="20220127 20:09:58.464"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.464" endtime="20220127 20:09:58.464"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.464" endtime="20220127 20:09:58.464"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.465" endtime="20220127 20:09:58.465"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.464" endtime="20220127 20:09:58.465"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.465" endtime="20220127 20:09:58.465"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.465" endtime="20220127 20:09:58.465"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.465" endtime="20220127 20:09:58.465"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.465" endtime="20220127 20:09:58.465"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.465" endtime="20220127 20:09:58.465"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.465" endtime="20220127 20:09:58.465"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:58.466" level="INFO">Resolving locator: alias:Calculator.Btn8</msg>
+<msg timestamp="20220127 20:09:58.467" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn8-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:58.636" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:58.637" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAuCAIAAAAdqSbxAAAClklEQVR4nO2ZX2jTQBjAk9waK03wX7NmtHNYyuyGzIIICsJw4IOKWl8U3IswhlYf3IvgZPNJEVSQObCFir744JOPimMgKDo3poM5sGDLpjWSehNGkrb2ahIfWpJaJypeSAv5vX1H+PK7y92X444sFotEk0DZLfAPOK7W4LhaQ0ttgBDKZrOyLKuqapdQBQAAy7J+v9/tdhuNpFGzyuVyKpXied7r9dI0bZNkFYQQhDCXy4XDYZfLVWk0XTOZTKUr9hnWIwiCoijBYLASmvNVlmWO42yyWh2O4yRJMkLTVVVV2z99HTRN166cZqoDjqs1OK7W4LhaQ8ufH/lr9Hz6cTL+4OmCWHL7unqPnz11MOQh8eXHN6669HJ8eOzNhujIeOLm+X301NjF2zN5bOkJnK7f0zOz0tZDA9GdncGuPf2D+wMrC28/4dyv4XMFrX6e/DA7/blMEIQG36WW13V3BwC2/DjnKxU4PHR6fjQeG5zu3abNTRWOXhrZ7cGWnsBaB7T8l485dcveA7vaXDr5bfH5k9c5rFt2bK668iJxY2LTyctDx470n7uWvB4Fk7fuvirgyk/gdF1eXFLY9vb1lYxrQz2dnrwoShquF2B0pdoikdavE8k7k/Pppfdzj+L3nhU279jOYZxk+NbWmp6BKxeoxP3E8MOVMr2xIxIdPXMi1Jh1gCDcHX2xq30xjBl/ppn2A46rNTiu1uC4WoPpCgBACNmo8isIIQDMv4npyjAMhNAOpd8CIWQYxghNV5/PJ4qiIAiNMLoIIUEQRFHked5oNM80NU1TFAVC2AhnxRRFsSzLcRzLshRVHVCy9n5L1/VSqaSqqq7rNklWIUkSAEDTtCFK1Lk2OM1Zsxof5x7mv1n1HuYH6fsLs53EHl8AAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:09:58.637" level="INFO">region:417,350,464,386</msg>
+<msg timestamp="20220127 20:09:58.638" level="INFO">Moving mouse to (440, 368)</msg>
+<msg timestamp="20220127 20:09:58.739" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:58.466" endtime="20220127 20:09:58.740"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:58.466" endtime="20220127 20:09:58.740"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.740" endtime="20220127 20:09:58.741"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.740" endtime="20220127 20:09:58.741"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.741" endtime="20220127 20:09:58.741"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.741" endtime="20220127 20:09:58.741"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.741" endtime="20220127 20:09:58.742"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.741" endtime="20220127 20:09:58.742"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.742" endtime="20220127 20:09:58.742"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.742" endtime="20220127 20:09:58.742"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.742" endtime="20220127 20:09:58.742"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.742" endtime="20220127 20:09:58.742"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.743" endtime="20220127 20:09:58.743"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.743" endtime="20220127 20:09:58.743"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:58.463" endtime="20220127 20:09:58.743"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:58.463" endtime="20220127 20:09:58.743"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:58.463" endtime="20220127 20:09:58.743"/>
+</iter>
+<iter>
+<var name="${num}">9</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.744" endtime="20220127 20:09:58.745"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.744" endtime="20220127 20:09:58.745"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.745" endtime="20220127 20:09:58.745"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.745" endtime="20220127 20:09:58.745"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.745" endtime="20220127 20:09:58.745"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.745" endtime="20220127 20:09:58.745"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.745" endtime="20220127 20:09:58.745"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.745" endtime="20220127 20:09:58.745"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.746" endtime="20220127 20:09:58.746"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.746" endtime="20220127 20:09:58.746"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.746" endtime="20220127 20:09:58.746"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.746" endtime="20220127 20:09:58.746"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.746" endtime="20220127 20:09:58.746"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.746" endtime="20220127 20:09:58.746"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:58.747" endtime="20220127 20:09:58.747"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:58.746" endtime="20220127 20:09:58.747"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:58.747" level="INFO">Resolving locator: alias:Calculator.Btn9</msg>
+<msg timestamp="20220127 20:09:58.748" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn9-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:58.906" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:58.907" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAtCAIAAABwCu9cAAACiElEQVR4nO2ZT2jTUBjAk7w1ZjXPDeyj0apgGa5ToaAHB+7gQUEPykC9eZiibsPTLjJEEJwOBnoQRT3togcFYWN4KIL/0MPAyzwMClKLLdnSPaeuSdf2dUk8VJpYN2fhxTSQ3y0fycfvfbz38fIeWywWGe/AuS3QGL6uk3hMt8X+QAjJZrOqquq67pZQFQAAhDASiQiCYI+ztc5QqVSSyaQkSaFQiOd5NyQtCCEY41wuF4vFAoFALW7pplKp6oBcMlwFWZY1TYtGo7WINXdVVUUIuWG1JgihfD5vj1i6uq67Pgfq4Hm+bhV5rDP4uk7i6zqJr+skLeu/8s8Y32ee3HswOZ1eAqiz59TgQG/XJpZifoZmdY3sxPWrjzOd50bv3712Ojz7cHgssWBQS1+Fmq6ReZ2YbT3cf+lovGPX/t6hi4e4D89fzVH2padbKCwzQQh/zS4h2rGN+ZLOUN6IUtMFO/Z0BefeTrzJLBuMUVqc/1oydbJi0spfhdpSY2FP//DJG7fH+o6PsgwjbGwlRlu8nXLnodgZONQ9cOdp34+Fb6UNbeUXly88Cu3eCejlZxj6fZcT2qWtm4vvx599Ch050Q0pNzKK1TULyueMoqQ/vpuafDm//czN8/uC9LJXoai7MjM+NDItbInuPXD21sixOAqs/02jUNQNHLwylaCXblU8tmfwdZ3E13USX9dJLF0AACHERZU/IYQA8Nuuw9IVRRFj/N+V/gbGWBRFe8TSDYfDiqLIstwMNSaEyLKsKIokSfa4dWBqGIamaRjjZjiO5jgOQogQghBynFVT1n5RZZpmuVzWdd00Kf8FNArLsgAAnuftrkydbvPj2UbmCfybHxqsdfPzEx1YABRqNW7oAAAAAElFTkSuQmCC" &gt;</msg>
+<msg timestamp="20220127 20:09:58.907" level="INFO">region:472,351,520,386</msg>
+<msg timestamp="20220127 20:09:58.908" level="INFO">Moving mouse to (496, 368)</msg>
+<msg timestamp="20220127 20:09:59.008" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:58.747" endtime="20220127 20:09:59.009"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:58.747" endtime="20220127 20:09:59.010"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.010" endtime="20220127 20:09:59.010"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.010" endtime="20220127 20:09:59.010"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.011" endtime="20220127 20:09:59.011"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.010" endtime="20220127 20:09:59.011"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.011" endtime="20220127 20:09:59.011"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.011" endtime="20220127 20:09:59.011"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.011" endtime="20220127 20:09:59.011"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.011" endtime="20220127 20:09:59.011"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.011" endtime="20220127 20:09:59.011"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.011" endtime="20220127 20:09:59.012"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:58.744" endtime="20220127 20:09:59.012"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:58.744" endtime="20220127 20:09:59.012"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:58.744" endtime="20220127 20:09:59.012"/>
+</iter>
+<iter>
+<var name="${num}">7</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.013" endtime="20220127 20:09:59.013"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.013" endtime="20220127 20:09:59.013"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.013" endtime="20220127 20:09:59.013"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.013" endtime="20220127 20:09:59.013"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.014"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.014"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.014"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.014"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.014"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.014"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.015"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.014" endtime="20220127 20:09:59.015"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:59.015" level="INFO">Resolving locator: alias:btn7_calculator</msg>
+<msg timestamp="20220127 20:09:59.016" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/btn7_calculator-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:59.160" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:59.160" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAArCAIAAACmUwxBAAACIElEQVR4nO2ZPWwTMRhA786JleGsqjRuTtyCQoGAYClIDEWV+BFLl3ZnqDplYWRFYkNCYmFhQ0Id6FikDgUhhY0yMkQZyMLh5iIPSLlTozi1jyFS7AZKobK5nHRvOn/yWe/sz/bJtvv9vpUdnLQF/o1c1yQFtcAYC4IgiiLOeVpCIwAACCHf90ulkhq3x1NtOBy2Wi3P88rlMoQwDUkJY4xS2u12a7VasVgcx6Vuu90efVBKhr+BEBLHcbVaHUdk7kZRhDFOw+pYMMa9Xk+NSF3Oeeo5MAGEcGIWZWxlyHVNkuuaJNc1SeHkKn+HIFsP1182D9UYXH68/eR26bhXToE2XQffe/Ti2oEYlXjn/fNnjfkbFzXvO9p0LTh3rjY3ehSdt68+/FisP13xNSebgdxNok+vN7/Mr23cr2hvXb+u2N990zi89WD1vL6RG6Ndl7d3d1pn7q4uzdi6m7b06/KvjY/EW75zuXhy3VOgWVcEe587s9dvLhhIBMvSrZv0ms0AXLp6wUzf6tbl+9++i7J/VufOcAS9g1a4Ut98V9fa5FEy9s+Q65ok1zVJrmsSqQsAYIylqPIrjDEAgBqRuq7rUkr/u9KfoJS6rqtGpG6lUgnDkBAyDX3MGCOEhGHoeZ4alwemQog4jiml03Ac7TgOQghjjBByHNmntnrzkyTJYDDgnCdJkoakxLZtAACEUHW1JnSnn8wuZJkgYzc/PwHaksSsuPuFdAAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:09:59.160" level="INFO">region:362,352,410,385</msg>
+<msg timestamp="20220127 20:09:59.161" level="INFO">Moving mouse to (386, 368)</msg>
+<msg timestamp="20220127 20:09:59.266" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:59.015" endtime="20220127 20:09:59.270"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.015" endtime="20220127 20:09:59.270"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.270" endtime="20220127 20:09:59.271"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.270" endtime="20220127 20:09:59.271"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.271" endtime="20220127 20:09:59.271"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.271" endtime="20220127 20:09:59.271"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.271" endtime="20220127 20:09:59.271"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.271" endtime="20220127 20:09:59.272"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.272" endtime="20220127 20:09:59.272"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.272" endtime="20220127 20:09:59.272"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.272" endtime="20220127 20:09:59.272"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.272" endtime="20220127 20:09:59.272"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.273" endtime="20220127 20:09:59.273"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.272" endtime="20220127 20:09:59.273"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.273" endtime="20220127 20:09:59.273"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.273" endtime="20220127 20:09:59.273"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:59.013" endtime="20220127 20:09:59.273"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:59.012" endtime="20220127 20:09:59.273"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.012" endtime="20220127 20:09:59.273"/>
+</iter>
+<iter>
+<var name="${num}">6</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.274" endtime="20220127 20:09:59.274"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.274" endtime="20220127 20:09:59.274"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.274" endtime="20220127 20:09:59.274"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.274" endtime="20220127 20:09:59.274"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.275" endtime="20220127 20:09:59.275"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.274" endtime="20220127 20:09:59.275"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.275" endtime="20220127 20:09:59.275"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.275" endtime="20220127 20:09:59.275"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.275" endtime="20220127 20:09:59.276"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.275" endtime="20220127 20:09:59.276"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:59.276" level="INFO">Resolving locator: alias:Calculator.Btn6</msg>
+<msg timestamp="20220127 20:09:59.277" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn6-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:59.430" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:59.430" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAuCAIAAAADYBZCAAACt0lEQVR4nO2ZT2jTUBzHX95LQwt5tbCkjQbGVnF0IHqY4Bh4GiJY/AN6mGLZTRQPwrwNlYEyj/4byhx4GchgML3sInrZYQcPE7aC1eEQSmjXdLUkaWNfm8SDo3bV4bRP0kE+xy/hl0/y4/fgvcdkMpl8Ph8MBsPhMMdxwFUIIblcTtM0QRBCoVA9ZzHG1Wq1UCik02nbtt0zBAAACCHP8x0dHRjjxpwxTdO27XK5XKvVHMdxy2/ThmFYlg0EAgihLblpmm457RzotsCO2B2WLACAEJJOp3VdtyzLXRuEEMZYlmW/39+YM5qmpVIpSZIEQWiHlUhV1fX19Vgs5vP56jmTTCZ/6Lso14SiKIZhRKPRegJ1XRdF0UWnXxFFUdO0xgRaluV6o5vgOK5pQnbHjHuW9PAs6eFZ0oOlVMcqfnw7N/d6cXk1JwxNPLzQSfXzqVhWPr8cuzmd743HL90Y3huWI7Q7RMHy28rzuzMo8fjJSdn356f/iZYtneLCzHwGyfOjFycLtWB3/5nLV84d3MPQkKvTsmUt9T5ZCR85PnT60L6AvjL76OnovcDUeJxq11ut5RgbGybsGogfO9yzv6fv7PXhfnvpzWKe7ma0VUvGx7KMo+vGppZfjARBsajR3Yy23JdAV7fkrCU/lAEAANjFL2tfWVkO053ylquhAyfivdWFqQevllY/vZu9P70cGjw1gNtsegDsPH/7TmVi8sWta0VGiA2OjF89ytOVpLKqQ6EvMfYsQaHStm/4j7Xp4VnSw7Okh2dJD4gQIoS4rbEFQkjTWTDkeV5VVbeEfouqqjzPNyYwEolks1lFUdrhjxJCFEXJZrOSJDXmTKlUMgxDVdV2OGWFEGKMRVHEGEP4c2YY0zQdx6lUKpZltcMdBUKI47hGReDdUdBkd1h6dxR/z3Z3FN8B4R0agWB4E/wAAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:09:59.430" level="INFO">region:475,388,520,424</msg>
+<msg timestamp="20220127 20:09:59.431" level="INFO">Moving mouse to (497, 406)</msg>
+<msg timestamp="20220127 20:09:59.532" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:59.276" endtime="20220127 20:09:59.542"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.276" endtime="20220127 20:09:59.542"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.543" endtime="20220127 20:09:59.543"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.543" endtime="20220127 20:09:59.543"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.543" endtime="20220127 20:09:59.544"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.543" endtime="20220127 20:09:59.544"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.544"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.544"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.544"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.544"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.544"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.544"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.545"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.544" endtime="20220127 20:09:59.545"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.545" endtime="20220127 20:09:59.545"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.545" endtime="20220127 20:09:59.545"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.545" endtime="20220127 20:09:59.545"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.545" endtime="20220127 20:09:59.545"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:59.274" endtime="20220127 20:09:59.545"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:59.273" endtime="20220127 20:09:59.545"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.273" endtime="20220127 20:09:59.545"/>
+</iter>
+<iter>
+<var name="${num}">5</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:59.547" level="INFO">Resolving locator: image:.images/btn5-path.png</msg>
+<msg timestamp="20220127 20:09:59.547" level="INFO">Searching for image '.images/btn5-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:59.689" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:59.690" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAqCAIAAABgEa+jAAACUElEQVR4nO2ZvYvUQBiHk8zusHCTuxU3bjCHH+udt4WFpeBhY2lxW1gsaKF49wd4oI0ogsV1gsIJVwiHHFhpoa2FiogW2giyTURYR7IOfpDJupuJk1goSxIWlXOSbCBPlzcweRJ+eTOZkQeDgZQ3lKwFtkMupUuxY8ZYt9ullHLOMxEaAQBQVdUwjEqlEjslhzPteV6n09F1vVarQQjTlYzDGCOE9Hq9ZrNZLpdH9eFwGJE2TfPXzWUhOR6MseM4jUZjVDFNM5JpSqmmaamL/QlN02zbDlcopRFpznnmqYgBIYy9XZzzXHaPQjotCum0KKTTIj73+E+CLw8vtK+/8n4fgr2n1m8vLwCxFxEu/b0/AHPtaxeP75QlSZLhjlnRxpJ46b7jSLsah+bnpsQOHEFwpn37Gy0B9zOxWSB25DCCpZmrTKO3Gyvt1onW2cubLz8lMikXHI+pxdXNxVWJO/jNozs3Nq5eKd1aP71fdKyTaXkAGYdb51eOwXfPnn/whQ+fYJ/2/aRiLTQePn5694mz5+Duabnfff1g6zGbP3N0VvxzESs9/Pr+xf17Wx/tH3DGWDiyvHbu5L5J79OlA0uXbi6JHHE8uZx7FNJpUUinRSGdFhFpAABjLCuVsTDGAIh8nxRFiUgjhAgh6Vr9BUIIQihcQQhFpOv1umVZGONJeN6MMYyxZVm6rofr1Wo1stTr+77jOISQSVhUVxRFVVVN01RVDSfC8zw5tlEUBIHrupzzIEjwf+lfkGUZAAAhjGVYiu0E5IX8t7y8kMvdrZ//AOdi1m62dwAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:09:59.691" level="INFO">region:416,391,466,423</msg>
+<msg timestamp="20220127 20:09:59.693" level="INFO">Moving mouse to (441, 407)</msg>
+<msg timestamp="20220127 20:09:59.798" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:59.547" endtime="20220127 20:09:59.805"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.546" endtime="20220127 20:09:59.805"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.806" endtime="20220127 20:09:59.806"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.806" endtime="20220127 20:09:59.806"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.807" endtime="20220127 20:09:59.807"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.806" endtime="20220127 20:09:59.807"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.807" endtime="20220127 20:09:59.807"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.807" endtime="20220127 20:09:59.807"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.807" endtime="20220127 20:09:59.807"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.807" endtime="20220127 20:09:59.808"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.808" endtime="20220127 20:09:59.808"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.808" endtime="20220127 20:09:59.808"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.808" endtime="20220127 20:09:59.808"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.808" endtime="20220127 20:09:59.808"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.809" endtime="20220127 20:09:59.809"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.808" endtime="20220127 20:09:59.809"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.809" endtime="20220127 20:09:59.809"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.809" endtime="20220127 20:09:59.809"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.809" endtime="20220127 20:09:59.809"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.809" endtime="20220127 20:09:59.809"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.809" endtime="20220127 20:09:59.810"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.809" endtime="20220127 20:09:59.810"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.810" endtime="20220127 20:09:59.810"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.810" endtime="20220127 20:09:59.810"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.810" endtime="20220127 20:09:59.810"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.810" endtime="20220127 20:09:59.810"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.810" endtime="20220127 20:09:59.810"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.810" endtime="20220127 20:09:59.810"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:59.546" endtime="20220127 20:09:59.810"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:59.546" endtime="20220127 20:09:59.811"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.546" endtime="20220127 20:09:59.811"/>
+</iter>
+<iter>
+<var name="${num}">4</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.811" endtime="20220127 20:09:59.812"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.811" endtime="20220127 20:09:59.812"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.812" endtime="20220127 20:09:59.812"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.812" endtime="20220127 20:09:59.812"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.813" endtime="20220127 20:09:59.813"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.812" endtime="20220127 20:09:59.813"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:09:59.813" endtime="20220127 20:09:59.813"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:09:59.813" endtime="20220127 20:09:59.813"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:09:59.814" level="INFO">Resolving locator: alias:Calculator.Btn4</msg>
+<msg timestamp="20220127 20:09:59.814" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn4-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:09:59.960" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:09:59.960" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAArCAIAAABEjxc4AAACIUlEQVR4nO2ZMWgUQRhGZ3dyw4XsGIud3MKJyCF4CDZaCpImAYsgBrGyEQQRG4sDFRW7qAQsBKtYpDW5dCksQkidK1J6zRHxHNhjmni7cN5cZsdCPTZxzInuTHZhXzcfw8yb4Z8ddtfq9XrgIFEUhWHIGAuCQAgBjhXbtjHGhBCMsW3bw9z63RsAIKXs9/tCCCmlQUkFlmVBCBFCcWnwJ+/0Y4/ukkqy6j2mTDnn7XY7DecSQogxLpfLxWIxnivqezAYNJtNz/Nc10UIGZRUwDlnjHU6nWq1WigUhrnCu9Vq/ViiWcOjoJSGYVipVIaJor6DICCEGLQaDSGk2+3GE4W3EOLYy+MQCKFDJy2rz5Pc2yy5t1lyb7No9RadrRe3Zmfvr9Ao6aH1ecu9xttHb3a4nhtMl7f4sv5ycefiw9qMq2UKPd6D3fevlsNrT+5emrS0TKDFe//T2us6uFG7eRZpstbhHbGNpZXw6r35M4XRnf8Z9fvOfyC/bm829j43HsytAgAAiMS+XLp9vfW8/vhyggtJ3NuanK69u/DtZyvarT9d+Hhl4dn8+WRnStwb2BNTpyd+NUTvxJiFTnqn3PFkSz2r92Xy+30AeO7O8gcdA2d1v3Nvs+TeZsm9zaLwhhByzs2rHAHnHEIYTxTejuMwxkwp/RWMMcdx4onCu1Qq+b5PKU3DrnPOKaW+73ueF88V35Hz/2kJkP9PSwdZ9f4OHNDcj2iMtNkAAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:09:59.960" level="INFO">region:359,389,410,422</msg>
+<msg timestamp="20220127 20:09:59.961" level="INFO">Moving mouse to (384, 405)</msg>
+<msg timestamp="20220127 20:10:00.062" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:09:59.813" endtime="20220127 20:10:00.071"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.813" endtime="20220127 20:10:00.071"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.071" endtime="20220127 20:10:00.072"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.071" endtime="20220127 20:10:00.072"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.072" endtime="20220127 20:10:00.072"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.072" endtime="20220127 20:10:00.072"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.072" endtime="20220127 20:10:00.072"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.072" endtime="20220127 20:10:00.072"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.072" endtime="20220127 20:10:00.072"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.072" endtime="20220127 20:10:00.073"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.073" endtime="20220127 20:10:00.073"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.073" endtime="20220127 20:10:00.073"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.073" endtime="20220127 20:10:00.073"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.073" endtime="20220127 20:10:00.073"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.073" endtime="20220127 20:10:00.073"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.073" endtime="20220127 20:10:00.073"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.074" endtime="20220127 20:10:00.074"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.073" endtime="20220127 20:10:00.074"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.074" endtime="20220127 20:10:00.074"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.074" endtime="20220127 20:10:00.074"/>
+</branch>
+<status status="PASS" starttime="20220127 20:09:59.811" endtime="20220127 20:10:00.074"/>
+</if>
+<status status="PASS" starttime="20220127 20:09:59.811" endtime="20220127 20:10:00.074"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:59.811" endtime="20220127 20:10:00.074"/>
+</iter>
+<iter>
+<var name="${num}">3</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.075" endtime="20220127 20:10:00.075"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.075" endtime="20220127 20:10:00.075"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.076" endtime="20220127 20:10:00.076"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.076" endtime="20220127 20:10:00.076"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.076" endtime="20220127 20:10:00.076"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.076" endtime="20220127 20:10:00.076"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:00.077" level="INFO">Resolving locator: alias:Calculator.Btn3</msg>
+<msg timestamp="20220127 20:10:00.077" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn3-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:00.255" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:00.256" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAtCAIAAACfyIRiAAAClUlEQVR4nO2ZS2jUQBiAJ5ndEN0ERHZMdCloqLhaEaEWsXrwoN4UelH01B6EilXorRcPIoqvgx704EXxcRQriKAVEUX04OMgxS26bHEJpB1QyaSuO9lJPHTZxNWqh4nZQL5T8k/482XyzzDDCLVaDQAAACCEVCoVXdcRQpIkgVihlGKMLcsyDENRlFacECK0jD3PcxwHY0wIYYzFpNpEFEVVVRFCqqqKotiKe54XGAMAfN+v1+uMMd/34/AMEAQBQihJUli32RQ2TgTtX9D5JM84E76hlFar1U4YeRBCVVULhYIsy21NQR27rlsqlXRdz+fzHTK7zczMFIvFbDbbiruuGxiXy+X5z4pJ8jeYpuk4jmEYrUi5XA7qmBCCEIpDbEEQQrZthyOEkMCYMRZ7MbQhSVLbiGKMJW+uSI2jJzWOntQ4ejJ/f+Qf8b68u3P15v2Xk9Wvnlro2b7/8MFdK9sXBRzgZyxkaT2zduDI3oJsTz24fu38CdW4MtgNub2gCUdjpffA0d75642ra2+fXvw4/R1057i9oEkEdezNma/GH04pm7atX8Q/O8c+BgAAQCaO7Tv9vOZnVuwYG9upRzGuOefM9Y9cunzh5OjAsjdnRs89+xzBBpezsZjTVq3Z0L97+Pihzfbj209mPb75QXTzsQCAABqNBv/M/OqYvr93a1IuGmixb396fffGC7BueMty/j3Czdj/5uAPjybGp2fnPHlpV8/WkbODe7oi+IXcjIUlfUOn+oZ4pVuY5K0rUuPoSY2jJzWOnsAYQkgpjVHlVyilEP60JYAQBsaKomCM/7vVn8AYh49tAACKogTGmqZZlmWaZif0NKXUNE3LsnRdD8c1TUvPmjiRnjXFSvKMk3fW9AOIYiWZgJ9MsgAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:00.256" level="INFO">region:472,426,521,461</msg>
+<msg timestamp="20220127 20:10:00.258" level="INFO">Moving mouse to (496, 443)</msg>
+<msg timestamp="20220127 20:10:00.359" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:00.076" endtime="20220127 20:10:00.364"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.076" endtime="20220127 20:10:00.364"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.364" endtime="20220127 20:10:00.364"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.364" endtime="20220127 20:10:00.364"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.365" endtime="20220127 20:10:00.365"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.364" endtime="20220127 20:10:00.365"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.365" endtime="20220127 20:10:00.365"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.365" endtime="20220127 20:10:00.365"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.365" endtime="20220127 20:10:00.365"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.365" endtime="20220127 20:10:00.365"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.365" endtime="20220127 20:10:00.366"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.365" endtime="20220127 20:10:00.366"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.366"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.366"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.366"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.366"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.366"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.366"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.366"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.366" endtime="20220127 20:10:00.367"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.367" endtime="20220127 20:10:00.367"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.367" endtime="20220127 20:10:00.367"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:00.075" endtime="20220127 20:10:00.367"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:00.075" endtime="20220127 20:10:00.367"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.075" endtime="20220127 20:10:00.367"/>
+</iter>
+<iter>
+<var name="${num}">2</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.368" endtime="20220127 20:10:00.368"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.368" endtime="20220127 20:10:00.368"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.368" endtime="20220127 20:10:00.368"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.368" endtime="20220127 20:10:00.368"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:00.369" level="INFO">Resolving locator: alias:Calculator.Btn2</msg>
+<msg timestamp="20220127 20:10:00.369" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn2-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:00.535" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:00.536" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAqCAIAAABtD9/kAAACVklEQVR4nO2ZTWjUQBSAJ5nNGCQjSDducK3ognYvglCR2oJXjx7Uk70UTz1U0INUCz1YPCmCCHVBiy4o6FFREUXP7VEFWdiuP4S0WYda2IQumTiJh63ZJq5/ODG7kO/2HmTmy+TNZJgRms0m6B3EpAX+jkwkppTqum5ZFmMsEaEACCHGOJ/Py7IcJIWNxeC6bqVS0TQtm80ihJKQbEMpJYTU6/VisShJUisZ0q3Vaq0XSsiwA4Zh2LZdKBRaYah2LctSVTUJq5+iqmqj0QjCkC5jLPEaiIAQ2jiLemxlSHXjJNWNk1Q3TqJ7hn/DXZ5/cPves4XFz1TODQwfGx8/OqAIHDvgqrv2+n7phT18/MxJDXx6Wb5zfRr2l88Oyr9/8k/hqrv5wMTNuYyUAQCAof2wOn/x3dslb7DAr+I41+66KwDAa6x8+Spv78/yrIW4ppqrP712t7pndOzwFq66fKdaC+fj40vnS0sjF66c2C3xbZq7rqs/mTlXWh6ZujxxqI/7t+Osu/ZmbnpWPzh1NQ5XwFnXqz8vP1zZN3Zk2+r7xVUAABDQ1h07+zZx64GrLvtQqTqWdeP0wvcM3DU6e+vUXsirB6660tDko1eTPFuM0mN7hlQ3TlLdOEl14ySkCyGklCal0hFKKYTtv0xIV1EUQsh/V/oVhBBFUYIwpJvL5UzTNAyjG8aYUmoYhmmamqYFydCBqed5tm0TQrrhOFoURYyxqqoYY1FcH1Yhcjfh+77jOIwx3/eTkGwjCAKEECEUuIIfdbucXl7Iup/05ocTHW9+vgE3WezBPz47NwAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:00.536" level="INFO">region:416,430,464,462</msg>
+<msg timestamp="20220127 20:10:00.537" level="INFO">Moving mouse to (440, 446)</msg>
+<msg timestamp="20220127 20:10:00.638" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:00.368" endtime="20220127 20:10:00.639"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.368" endtime="20220127 20:10:00.639"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.640" endtime="20220127 20:10:00.640"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.639" endtime="20220127 20:10:00.640"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.640" endtime="20220127 20:10:00.640"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.640" endtime="20220127 20:10:00.640"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.640" endtime="20220127 20:10:00.640"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.640" endtime="20220127 20:10:00.640"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.640" endtime="20220127 20:10:00.640"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.640" endtime="20220127 20:10:00.640"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.641" endtime="20220127 20:10:00.641"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.641" endtime="20220127 20:10:00.641"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.641" endtime="20220127 20:10:00.641"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.641" endtime="20220127 20:10:00.641"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.641" endtime="20220127 20:10:00.641"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.641" endtime="20220127 20:10:00.641"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.642" endtime="20220127 20:10:00.642"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.641" endtime="20220127 20:10:00.642"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.642" endtime="20220127 20:10:00.642"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.642" endtime="20220127 20:10:00.642"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.642" endtime="20220127 20:10:00.642"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.642" endtime="20220127 20:10:00.642"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.643" endtime="20220127 20:10:00.643"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.642" endtime="20220127 20:10:00.643"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:00.368" endtime="20220127 20:10:00.643"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:00.367" endtime="20220127 20:10:00.643"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.367" endtime="20220127 20:10:00.643"/>
+</iter>
+<iter>
+<var name="${num}">1</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.644" endtime="20220127 20:10:00.645"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.644" endtime="20220127 20:10:00.645"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:00.645" level="INFO">Resolving locator: alias:Calculator.Btn1</msg>
+<msg timestamp="20220127 20:10:00.646" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn1-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:00.793" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:00.794" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAsCAIAAAC2SEy+AAABs0lEQVR4nO2ZMUvDQBiGkztzVMhtPRrI1qmrk7ubzqJ/w0Hc9AcITi5uOrmIQ3EQVwfRf9ClXephyoFDE4j9wiUOlhrOlqIm16bcM77Dlycfd5fcnR3HsVU10KIF/kIlpdd+RgDQ7/fDMJRS6hfKgzGmlPq+X6vV8rmtjOkkSTqdjud59XqdEKJXUgUAhBCDwaDVajmOM8lV6W63+/Vy2g1nwjmPoqjZbE4SdUyHYcgY02s1B8bYcDjMJ6q0lHLho0KBEKLMrkquHkZaF0ZaF0ZaF2VJx7328f724d17VkLxKT9M/yQNe4+3V5c3T68faKPw6pZlldDp9O3+/OJ5fefkYMu1iy4+pvBOI3/37HoPoeTltOjS388ooSQqe3ab1UMXRloXlZQu/uMyxtk8aj+UVLuSnTbSujDSujDSulClMcYAsBCVWQAAxjifqNKu6wohNCrNRwjhum4+UaUbjUYQBJzzZeg3AHDOgyDwPC+fq0e9aZpGUSSEWIZDdYQQpZQxRinNby1UacuysiwbjUZSyiwrYyv9C2zbxhgTQpTN0BTp5WcllrxKYG63imalbrc+AWurv/KSoaXjAAAAAElFTkSuQmCC" &gt;</msg>
+<msg timestamp="20220127 20:10:00.794" level="INFO">region:360,429,410,463</msg>
+<msg timestamp="20220127 20:10:00.795" level="INFO">Moving mouse to (385, 446)</msg>
+<msg timestamp="20220127 20:10:00.898" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:00.645" endtime="20220127 20:10:00.904"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.645" endtime="20220127 20:10:00.904"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.905" endtime="20220127 20:10:00.905"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.904" endtime="20220127 20:10:00.905"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.905" endtime="20220127 20:10:00.905"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.905" endtime="20220127 20:10:00.905"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.905" endtime="20220127 20:10:00.905"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.905" endtime="20220127 20:10:00.905"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.906" endtime="20220127 20:10:00.907"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.905" endtime="20220127 20:10:00.907"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.907" endtime="20220127 20:10:00.907"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.907" endtime="20220127 20:10:00.907"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.908"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.907" endtime="20220127 20:10:00.908"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.908"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.908"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.908"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.908"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.908"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.908"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.909"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.908" endtime="20220127 20:10:00.909"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.909" endtime="20220127 20:10:00.909"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.909" endtime="20220127 20:10:00.909"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.909" endtime="20220127 20:10:00.909"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.909" endtime="20220127 20:10:00.909"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:00.644" endtime="20220127 20:10:00.909"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:00.644" endtime="20220127 20:10:00.910"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.644" endtime="20220127 20:10:00.910"/>
+</iter>
+<iter>
+<var name="${num}">7</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.910" endtime="20220127 20:10:00.910"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.910" endtime="20220127 20:10:00.910"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.911"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.911"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.911"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.911"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.911"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.911"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.911"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.911" endtime="20220127 20:10:00.912"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:00.912" endtime="20220127 20:10:00.912"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:00.912" endtime="20220127 20:10:00.912"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:00.912" level="INFO">Resolving locator: alias:btn7_calculator</msg>
+<msg timestamp="20220127 20:10:00.913" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/btn7_calculator-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:01.080" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:01.080" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAArCAIAAACmUwxBAAACIElEQVR4nO2ZPWwTMRhA786JleGsqjRuTtyCQoGAYClIDEWV+BFLl3ZnqDplYWRFYkNCYmFhQ0Id6FikDgUhhY0yMkQZyMLh5iIPSLlTozi1jyFS7AZKobK5nHRvOn/yWe/sz/bJtvv9vpUdnLQF/o1c1yQFtcAYC4IgiiLOeVpCIwAACCHf90ulkhq3x1NtOBy2Wi3P88rlMoQwDUkJY4xS2u12a7VasVgcx6Vuu90efVBKhr+BEBLHcbVaHUdk7kZRhDFOw+pYMMa9Xk+NSF3Oeeo5MAGEcGIWZWxlyHVNkuuaJNc1SeHkKn+HIFsP1182D9UYXH68/eR26bhXToE2XQffe/Ti2oEYlXjn/fNnjfkbFzXvO9p0LTh3rjY3ehSdt68+/FisP13xNSebgdxNok+vN7/Mr23cr2hvXb+u2N990zi89WD1vL6RG6Ndl7d3d1pn7q4uzdi6m7b06/KvjY/EW75zuXhy3VOgWVcEe587s9dvLhhIBMvSrZv0ms0AXLp6wUzf6tbl+9++i7J/VufOcAS9g1a4Ut98V9fa5FEy9s+Q65ok1zVJrmsSqQsAYIylqPIrjDEAgBqRuq7rUkr/u9KfoJS6rqtGpG6lUgnDkBAyDX3MGCOEhGHoeZ4alwemQog4jiml03Ac7TgOQghjjBByHNmntnrzkyTJYDDgnCdJkoakxLZtAACEUHW1JnSnn8wuZJkgYzc/PwHaksSsuPuFdAAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:01.080" level="INFO">region:362,352,410,385</msg>
+<msg timestamp="20220127 20:10:01.081" level="INFO">Moving mouse to (386, 368)</msg>
+<msg timestamp="20220127 20:10:01.182" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:00.912" endtime="20220127 20:10:01.188"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.912" endtime="20220127 20:10:01.188"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.189" endtime="20220127 20:10:01.189"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.189" endtime="20220127 20:10:01.189"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.190" endtime="20220127 20:10:01.190"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.189" endtime="20220127 20:10:01.190"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.190" endtime="20220127 20:10:01.190"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.190" endtime="20220127 20:10:01.190"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.190" endtime="20220127 20:10:01.191"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.190" endtime="20220127 20:10:01.191"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.191" endtime="20220127 20:10:01.191"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.191" endtime="20220127 20:10:01.191"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.191" endtime="20220127 20:10:01.191"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.191" endtime="20220127 20:10:01.192"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.192" endtime="20220127 20:10:01.192"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.192" endtime="20220127 20:10:01.192"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:00.910" endtime="20220127 20:10:01.192"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:00.910" endtime="20220127 20:10:01.192"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:00.910" endtime="20220127 20:10:01.193"/>
+</iter>
+<iter>
+<var name="${num}">6</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.194" endtime="20220127 20:10:01.194"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.194" endtime="20220127 20:10:01.194"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.195" endtime="20220127 20:10:01.195"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.195" endtime="20220127 20:10:01.195"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.195" endtime="20220127 20:10:01.195"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.195" endtime="20220127 20:10:01.195"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.196" endtime="20220127 20:10:01.196"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.196" endtime="20220127 20:10:01.196"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.196" endtime="20220127 20:10:01.196"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.196" endtime="20220127 20:10:01.196"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:01.197" level="INFO">Resolving locator: alias:Calculator.Btn6</msg>
+<msg timestamp="20220127 20:10:01.198" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn6-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:01.356" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:01.357" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAuCAIAAAADYBZCAAAChUlEQVR4nO2ZTWjTYBjH3482tJBMD3nbaGBsEUcHoocJjoGnIYLFD9DDFMtuongQ3G2oDJR59Gsoc+BlIIPB9LKL6GWHHTxM2ApWh6tQgmmzaUlSa16XxsO0xOqYM+9IB/kd/4Qnv+TheSF5YKlUyufzkiQRQjiOA4FCKdV1XdM0RVF4nq/nsFKpWJal67ppmo7jBKgIAEAICYJACBEEASFUz2G1WnVd17Ztx3Fc1w1QEQAAIcQYcxznVQRrlkE5/Tto40uagO1hGQEAUEoLhUIzTA/GWBAEWZZjsZg3h4Zh5HI5SZJEUWySk6hYLKZSqWg0Ws9hNptd0w9QrgFVVS3LUhSlniDTNAkhATr9CSHEMAxvghzHCbzRDXAc1zAh22PGQ0t2hJbsCC3ZEWFUxym/ezU19WJ2frEk9o3cO9vK9PGZWNofng1dG1/uTKfPD/TvSshJ1h1iYPlt4cmtCZx58PCYHN346v/Ct6VbnpmY/oTl6cFzo59XW9q7T164eHrfDshCro5vy9Xcm6ydOHik78T+3XFzYfL+o8Hb8bHhNNOu+63lWisrVdTWkz58oGNPR9epK/3dtbmXs8s1Jna/8GsJo5EIdE3T+qkVI8kWUC4bbD9Gffcl3tYuuUvZt18BAADUyh+XvkRkOcF2yn1Xw3uPpju/z4zdfT63+P715J3x+Z29x3uEJpsegFrP3Lhpj4w+vX65DMVU79XhS4d4tpJMTnUkdmWGHmcYVFr3DltYmx2hJTtCS3aEluxAGGNKadAav0EpxRh7E8TzvK7rQQn9FV3Xvb/+AQAomUxqmqaqajO8UUqpqqqapkmS5M3DHcXmCXcUW8/2sAx3FJtnvR3FD0WiHVT2WOQsAAAAAElFTkSuQmCC" &gt;</msg>
+<msg timestamp="20220127 20:10:01.357" level="INFO">region:475,388,520,424</msg>
+<msg timestamp="20220127 20:10:01.358" level="INFO">Moving mouse to (497, 406)</msg>
+<msg timestamp="20220127 20:10:01.463" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:01.197" endtime="20220127 20:10:01.473"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:01.197" endtime="20220127 20:10:01.473"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.473" endtime="20220127 20:10:01.474"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.473" endtime="20220127 20:10:01.474"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.474" endtime="20220127 20:10:01.474"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.474" endtime="20220127 20:10:01.475"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.476" endtime="20220127 20:10:01.476"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.476" endtime="20220127 20:10:01.476"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.476" endtime="20220127 20:10:01.476"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.476" endtime="20220127 20:10:01.476"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.477" endtime="20220127 20:10:01.477"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.476" endtime="20220127 20:10:01.477"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.477" endtime="20220127 20:10:01.477"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.477" endtime="20220127 20:10:01.477"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.477" endtime="20220127 20:10:01.477"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.477" endtime="20220127 20:10:01.478"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.478" endtime="20220127 20:10:01.478"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.478" endtime="20220127 20:10:01.478"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:01.194" endtime="20220127 20:10:01.478"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:01.193" endtime="20220127 20:10:01.478"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:01.193" endtime="20220127 20:10:01.478"/>
+</iter>
+<iter>
+<var name="${num}">5</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:01.480" level="INFO">Resolving locator: image:.images/btn5-path.png</msg>
+<msg timestamp="20220127 20:10:01.480" level="INFO">Searching for image '.images/btn5-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:01.649" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:01.650" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAqCAIAAABgEa+jAAACUUlEQVR4nO2ZvYvUQBTAk8zusJDkZHHjBnP4sd55W1hYCh42lha3hcWCFop3f4AH2ogiWNgdKJxwhXDIgZUW2lqoiGihjSDbRIR1JOvgB5lZdzO7k1h4rElYVHQ22UB+Xd7Ayy/Dy8tkRu71elLWUNIW+BcyKV2IXTPG2u02IYRznorQCACAruuWZZVKpdiQHK7pwWDQarVM06xUKhDCZCXjMMYwxp1Op16vF4vFUbzf70ekbdv++XBpSI4HIUQprdVqo4ht25GaJoQYhpG42O8wDMN13XCEEBKR5pynXhUxIISxt4tznsnukUsnRS6dFLl0UsTXHv9J8OXhhebaq8H2Jdh7av328gIQexPh0t+7PTDXvHbx+E5ZkiQZlmdFG0vipbuUSrtqh+bnVLGJIwiuad/9RgrA+4xdFojNHEawNPOUGe3txkqzcaJx9vLmy08TWZQLLg91cXVzcVXiFL15dOfGxtUrhVvrp/eLLuvJtDygWYcb51eOwXfPnn/whaefYJ/2/UmVtdDy8NHTu0/onoO7Z+Ru+/WDrcds/szRWfHzIla6//X9i/v3tj66Q7jDWjiyfP3cyX3T3qcLB5Yu3VwSmXE8mVx75NJJkUsnRS6dFBFpAABjLC2VsTDGAIh8nwAAEWlN0zDGyVr9AYyxpmnhiKqqEelqteo4DkJoGuabMYYQchzHNM1wvFwuR7Z6fd+nlGKMp2FTXVEUXdcNw9B1XVF+Te5wOJRjB0VBEHiexzkPggn+L/0NsiwDACCEYePtofx0KyEyKZ3J060fGI/naGeu4B4AAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:10:01.650" level="INFO">region:416,391,466,423</msg>
+<msg timestamp="20220127 20:10:01.651" level="INFO">Moving mouse to (441, 407)</msg>
+<msg timestamp="20220127 20:10:01.752" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:01.480" endtime="20220127 20:10:01.761"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:01.480" endtime="20220127 20:10:01.761"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.762" endtime="20220127 20:10:01.762"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.761" endtime="20220127 20:10:01.762"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.762" endtime="20220127 20:10:01.762"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.762" endtime="20220127 20:10:01.762"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.763" endtime="20220127 20:10:01.763"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.762" endtime="20220127 20:10:01.763"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.763" endtime="20220127 20:10:01.763"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.763" endtime="20220127 20:10:01.763"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.763" endtime="20220127 20:10:01.764"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.763" endtime="20220127 20:10:01.764"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.764" endtime="20220127 20:10:01.764"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.764" endtime="20220127 20:10:01.764"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.764" endtime="20220127 20:10:01.764"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.764" endtime="20220127 20:10:01.764"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.765" endtime="20220127 20:10:01.765"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.765" endtime="20220127 20:10:01.765"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.765" endtime="20220127 20:10:01.765"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.765" endtime="20220127 20:10:01.765"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.766" endtime="20220127 20:10:01.766"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.765" endtime="20220127 20:10:01.766"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.766" endtime="20220127 20:10:01.766"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.766" endtime="20220127 20:10:01.766"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.766" endtime="20220127 20:10:01.766"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.766" endtime="20220127 20:10:01.767"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.767" endtime="20220127 20:10:01.767"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.767" endtime="20220127 20:10:01.767"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:01.479" endtime="20220127 20:10:01.767"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:01.479" endtime="20220127 20:10:01.767"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:01.479" endtime="20220127 20:10:01.767"/>
+</iter>
+<iter>
+<var name="${num}">4</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.769" endtime="20220127 20:10:01.769"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.769" endtime="20220127 20:10:01.769"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.769" endtime="20220127 20:10:01.769"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.769" endtime="20220127 20:10:01.769"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.770" endtime="20220127 20:10:01.770"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.770" endtime="20220127 20:10:01.770"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:01.770" endtime="20220127 20:10:01.770"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:01.770" endtime="20220127 20:10:01.770"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:01.771" level="INFO">Resolving locator: alias:Calculator.Btn4</msg>
+<msg timestamp="20220127 20:10:01.772" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn4-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:01.934" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:01.935" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAArCAIAAABEjxc4AAACIUlEQVR4nO2ZMWgUQRhGZ3dyw4XsGIud3MKJyCF4CDZaCpImAYsgBrGyEQQRG4sDFRW7qAQsBKtYpDW5dCksQkidK1J6zRHxHNhjmni7cN5cZsdCPTZxzInuTHZhXzcfw8yb4Z8ddtfq9XrgIFEUhWHIGAuCQAgBjhXbtjHGhBCMsW3bw9z63RsAIKXs9/tCCCmlQUkFlmVBCBFCcWnwJ+/0Y4/ukkqy6j2mTDnn7XY7DecSQogxLpfLxWIxnivqezAYNJtNz/Nc10UIGZRUwDlnjHU6nWq1WigUhrnCu9Vq/ViiWcOjoJSGYVipVIaJor6DICCEGLQaDSGk2+3GE4W3EOLYy+MQCKFDJy2rz5Pc2yy5t1lyb7No9RadrRe3Zmfvr9Ao6aH1ecu9xttHb3a4nhtMl7f4sv5ycefiw9qMq2UKPd6D3fevlsNrT+5emrS0TKDFe//T2us6uFG7eRZpstbhHbGNpZXw6r35M4XRnf8Z9fvOfyC/bm829j43HsytAgAAiMS+XLp9vfW8/vhyggtJ3NuanK69u/DtZyvarT9d+Hhl4dn8+WRnStwb2BNTpyd+NUTvxJiFTnqn3PFkSz2r92Xy+30AeO7O8gcdA2d1v3Nvs+TeZsm9zaLwhhByzs2rHAHnHEIYTxTejuMwxkwp/RWMMcdx4onCu1Qq+b5PKU3DrnPOKaW+73ueF88V35Hz/2kJkP9PSwdZ9f4OHNDcj2iMtNkAAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:10:01.935" level="INFO">region:359,389,410,422</msg>
+<msg timestamp="20220127 20:10:01.936" level="INFO">Moving mouse to (384, 405)</msg>
+<msg timestamp="20220127 20:10:02.040" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:01.770" endtime="20220127 20:10:02.048"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:01.770" endtime="20220127 20:10:02.049"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.049" endtime="20220127 20:10:02.049"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.049" endtime="20220127 20:10:02.049"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.050" endtime="20220127 20:10:02.050"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.050" endtime="20220127 20:10:02.050"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.050" endtime="20220127 20:10:02.050"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.050" endtime="20220127 20:10:02.050"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.050" endtime="20220127 20:10:02.051"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.050" endtime="20220127 20:10:02.051"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.051" endtime="20220127 20:10:02.051"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.051" endtime="20220127 20:10:02.051"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.051" endtime="20220127 20:10:02.051"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.051" endtime="20220127 20:10:02.051"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.051" endtime="20220127 20:10:02.051"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.051" endtime="20220127 20:10:02.051"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.052" endtime="20220127 20:10:02.052"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.051" endtime="20220127 20:10:02.052"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.052" endtime="20220127 20:10:02.052"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.052" endtime="20220127 20:10:02.052"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:01.768" endtime="20220127 20:10:02.052"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:01.768" endtime="20220127 20:10:02.052"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:01.768" endtime="20220127 20:10:02.052"/>
+</iter>
+<iter>
+<var name="${num}">2</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.053" endtime="20220127 20:10:02.053"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.053" endtime="20220127 20:10:02.053"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.054" endtime="20220127 20:10:02.054"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.053" endtime="20220127 20:10:02.054"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:02.054" level="INFO">Resolving locator: alias:Calculator.Btn2</msg>
+<msg timestamp="20220127 20:10:02.055" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn2-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:02.209" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:02.209" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAqCAIAAABtD9/kAAACVklEQVR4nO2ZTWjUQBSAJ5nNGCQjSDducK3ognYvglCR2oJXjx7Uk70UTz1U0INUCz1YPCmCCHVBiy4o6FFREUXP7VEFWdiuP4S0WYda2IQumTiJh63ZJq5/ODG7kO/2HmTmy+TNZJgRms0m6B3EpAX+jkwkppTqum5ZFmMsEaEACCHGOJ/Py7IcJIWNxeC6bqVS0TQtm80ihJKQbEMpJYTU6/VisShJUisZ0q3Vaq0XSsiwA4Zh2LZdKBRaYah2LctSVTUJq5+iqmqj0QjCkC5jLPEaiIAQ2jiLemxlSHXjJNWNk1Q3TqJ7hn/DXZ5/cPves4XFz1TODQwfGx8/OqAIHDvgqrv2+n7phT18/MxJDXx6Wb5zfRr2l88Oyr9/8k/hqrv5wMTNuYyUAQCAof2wOn/x3dslb7DAr+I41+66KwDAa6x8+Spv78/yrIW4ppqrP712t7pndOzwFq66fKdaC+fj40vnS0sjF66c2C3xbZq7rqs/mTlXWh6ZujxxqI/7t+Osu/ZmbnpWPzh1NQ5XwFnXqz8vP1zZN3Zk2+r7xVUAABDQ1h07+zZx64GrLvtQqTqWdeP0wvcM3DU6e+vUXsirB6660tDko1eTPFuM0mN7hlQ3TlLdOEl14ySkCyGklCal0hFKKYTtv0xIV1EUQsh/V/oVhBBFUYIwpJvL5UzTNAyjG8aYUmoYhmmamqYFydCBqed5tm0TQrrhOFoURYyxqqoYY1FcH1Yhcjfh+77jOIwx3/eTkGwjCAKEECEUuIIfdbucXl7Iup/05ocTHW9+vgE3WezBPz47NwAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:02.209" level="INFO">region:416,430,464,462</msg>
+<msg timestamp="20220127 20:10:02.209" level="INFO">Moving mouse to (440, 446)</msg>
+<msg timestamp="20220127 20:10:02.313" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:02.054" endtime="20220127 20:10:02.316"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.054" endtime="20220127 20:10:02.316"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.317" endtime="20220127 20:10:02.317"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.317" endtime="20220127 20:10:02.317"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.317" endtime="20220127 20:10:02.317"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.317" endtime="20220127 20:10:02.318"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.318" endtime="20220127 20:10:02.318"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.318" endtime="20220127 20:10:02.318"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.318" endtime="20220127 20:10:02.318"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.318" endtime="20220127 20:10:02.318"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.319"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.318" endtime="20220127 20:10:02.319"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.319"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.319"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.319"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.319"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.319"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.319"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.320" endtime="20220127 20:10:02.320"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.319" endtime="20220127 20:10:02.320"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.320" endtime="20220127 20:10:02.320"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.320" endtime="20220127 20:10:02.320"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.320" endtime="20220127 20:10:02.320"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.320" endtime="20220127 20:10:02.320"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:02.053" endtime="20220127 20:10:02.320"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:02.052" endtime="20220127 20:10:02.320"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.052" endtime="20220127 20:10:02.320"/>
+</iter>
+<iter>
+<var name="${num}">2</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.321" endtime="20220127 20:10:02.321"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.321" endtime="20220127 20:10:02.321"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.321" endtime="20220127 20:10:02.322"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.321" endtime="20220127 20:10:02.322"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:02.322" level="INFO">Resolving locator: alias:Calculator.Btn2</msg>
+<msg timestamp="20220127 20:10:02.323" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn2-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:02.494" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:02.494" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAqCAIAAABtD9/kAAACfUlEQVR4nO2ZT2jTUBjAX5M2DZKmjasxta2IhdqTIExkbuDRqwf1IjsoXhTcQQUZ2w6KR4UhaC+6KUP0KDgRBcHbdlQEKS2ValvTpvYPiSzpiy942EybMP+/LC3kd/se5L0fyffe+/KeT1VVMDwQbgv8HX5brGlatVpVFAUh5IqQCUmSoVAoHo/TNG02+vqTQdO0fD4fi8V4nqcoyg3JHhBCSZJEUUyn06axRbdYLLIsm0gkXDLchEqlIstyKpVaDy25qygKz/NuWP0UnucVRTFDiy5CyPUcsEFRVP8sGrKVwdN1Ek/XSTxdJ7HXDP+HLq48Xnj4fLUgQXpnZvz4ufPHMowP4wBYddfePMq+/Dp+4uIpAXx8dX/x1hyZXLo0Sv/+yT8Fq+62g1P3Fv0BPwAAjB0gCytX37+rGqMpfBmHOXc3XAEAhtxsfaN3JXfgzAWnpppefja/lE9Pnj7CYtXFO9XW6ZaeXr+S/Twxc/Pk3gDerrHr6uXla5ez4sTsjanDI9i/HWbdtbd3525/OjQ774QrwKxr1F88ePJl/5mjfKtYaAEAgC+4Pbl7JIhtBKy66EMu31WUOxdWf7SQeyazC2f3kbhGwKobGJtefj2Ns0c7Q1YzeLpO4uk6iafrJBZdgiAghG6pbAqEkCB6khZdhmEkSdpypV8hSRLDMGZo2dU4jmu32wghQRCCQXw7/T/R7XZrtZosyxzHmY0W3Ugkoqpqs9kslUoDchzNsmy/rs92N4EQ6nQ6mqYZhrHlhhYIgqBpOhwO+/29d2rXHXCGeSEbfOz1LoSwXC4Px82Pruu5XE4QhGg06vqpP4Sw0WjU6/VMJhMIbPxRfweckuS0lohyiAAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:02.494" level="INFO">region:416,430,464,462</msg>
+<msg timestamp="20220127 20:10:02.494" level="INFO">Moving mouse to (440, 446)</msg>
+<msg timestamp="20220127 20:10:02.599" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:02.322" endtime="20220127 20:10:02.601"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.322" endtime="20220127 20:10:02.602"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.603" endtime="20220127 20:10:02.603"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.602" endtime="20220127 20:10:02.603"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.604" endtime="20220127 20:10:02.605"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.604" endtime="20220127 20:10:02.605"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.606" endtime="20220127 20:10:02.606"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.605" endtime="20220127 20:10:02.606"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.607" endtime="20220127 20:10:02.607"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.606" endtime="20220127 20:10:02.607"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.608" endtime="20220127 20:10:02.608"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.608" endtime="20220127 20:10:02.609"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.610" endtime="20220127 20:10:02.610"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.609" endtime="20220127 20:10:02.610"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.611" endtime="20220127 20:10:02.611"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.610" endtime="20220127 20:10:02.611"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.612" endtime="20220127 20:10:02.612"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.611" endtime="20220127 20:10:02.612"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.612" endtime="20220127 20:10:02.613"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.612" endtime="20220127 20:10:02.613"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.613" endtime="20220127 20:10:02.613"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.613" endtime="20220127 20:10:02.613"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.614" endtime="20220127 20:10:02.614"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.614" endtime="20220127 20:10:02.614"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:02.321" endtime="20220127 20:10:02.614"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:02.321" endtime="20220127 20:10:02.615"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.320" endtime="20220127 20:10:02.615"/>
+</iter>
+<iter>
+<var name="${num}">1</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.621" endtime="20220127 20:10:02.622"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.621" endtime="20220127 20:10:02.622"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:02.624" level="INFO">Resolving locator: alias:Calculator.Btn1</msg>
+<msg timestamp="20220127 20:10:02.626" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn1-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:02.788" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:02.789" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAsCAIAAAC2SEy+AAABs0lEQVR4nO2ZMUvDQBiGkztzVMhtPRrI1qmrk7ubzqJ/w0Hc9AcITi5uOrmIQ3EQVwfRf9ClXephyoFDE4j9wiUOlhrOlqIm16bcM77Dlycfd5fcnR3HsVU10KIF/kIlpdd+RgDQ7/fDMJRS6hfKgzGmlPq+X6vV8rmtjOkkSTqdjud59XqdEKJXUgUAhBCDwaDVajmOM8lV6W63+/Vy2g1nwjmPoqjZbE4SdUyHYcgY02s1B8bYcDjMJ6q0lHLho0KBEKLMrkquHkZaF0ZaF0ZaF2VJx7328f724d17VkLxKT9M/yQNe4+3V5c3T68faKPw6pZlldDp9O3+/OJ5fefkYMu1iy4+pvBOI3/37HoPoeTltOjS388ooSQqe3ab1UMXRloXlZQu/uMyxtk8aj+UVLuSnTbSujDSujDSulClMcYAsBCVWQAAxjifqNKu6wohNCrNRwjhum4+UaUbjUYQBJzzZeg3AHDOgyDwPC+fq0e9aZpGUSSEWIZDdYQQpZQxRinNby1UacuysiwbjUZSyiwrYyv9C2zbxhgTQpTN0BTp5WcllrxKYG63imalbrc+AWurv/KSoaXjAAAAAElFTkSuQmCC" &gt;</msg>
+<msg timestamp="20220127 20:10:02.789" level="INFO">region:360,429,410,463</msg>
+<msg timestamp="20220127 20:10:02.789" level="INFO">Moving mouse to (385, 446)</msg>
+<msg timestamp="20220127 20:10:02.893" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:02.623" endtime="20220127 20:10:02.900"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.622" endtime="20220127 20:10:02.900"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.901" endtime="20220127 20:10:02.901"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.900" endtime="20220127 20:10:02.901"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.901" endtime="20220127 20:10:02.901"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.901" endtime="20220127 20:10:02.901"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.901" endtime="20220127 20:10:02.901"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.901" endtime="20220127 20:10:02.902"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.902" endtime="20220127 20:10:02.902"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.902" endtime="20220127 20:10:02.902"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.902" endtime="20220127 20:10:02.902"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.902" endtime="20220127 20:10:02.902"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.902" endtime="20220127 20:10:02.903"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.902" endtime="20220127 20:10:02.903"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.903" endtime="20220127 20:10:02.903"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.903" endtime="20220127 20:10:02.903"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.903" endtime="20220127 20:10:02.903"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.903" endtime="20220127 20:10:02.903"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.903" endtime="20220127 20:10:02.903"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.903" endtime="20220127 20:10:02.903"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.904" endtime="20220127 20:10:02.904"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.903" endtime="20220127 20:10:02.904"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.904" endtime="20220127 20:10:02.904"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.904" endtime="20220127 20:10:02.904"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:02.904" endtime="20220127 20:10:02.904"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:02.904" endtime="20220127 20:10:02.904"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:02.617" endtime="20220127 20:10:02.904"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:02.616" endtime="20220127 20:10:02.905"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.615" endtime="20220127 20:10:02.905"/>
+</iter>
+<iter>
+<var name="${num}">5</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:02.906" level="INFO">Resolving locator: image:.images/btn5-path.png</msg>
+<msg timestamp="20220127 20:10:02.906" level="INFO">Searching for image '.images/btn5-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:03.044" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:03.045" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAqCAIAAABgEa+jAAACWUlEQVR4nO2ZPYvUQBiAk8zusHCTE3Fjgjn8WO+8LSwsBQ8bS4vbwmJBC8W7H+CBNqIIFnaCwglXCIccWGmhrYWKiBbaCLJNRFhHsg5+kGTdzcSZWHisSVhO0UmygTzdvANvngzvTCYz8mAwkIqGkrfAv1BI6UqiTSntdruu6zLGchEaAQBQVdU0zVqtluiSozUdBEGn0zEMo16vQwizlUxCKSWE9Hq9ZrNZrVZH8SAIYtKWZf16uTwkx4Mx9jyv0WiMIpZlxWradV1N0zIX2wpN0xzHiUZc141JM8Zyr4oEEMLE7GKMFXL1KKWzopTOilI6K5J7j/8k/PLwfPv6q2CzCfacXL29NA/EPkS49Pf+AMy2r144tkOWJEmG22dEG0vipfueJ+1sHJybnRKbOIbgmubON7cC/M/EoaHYzFEES1NfmUZv15bbreOtM5fWX35KZVMuuDymFlbWF1Yk5uE3j+7cWLtyuXJr9dQ+0WWdzpIHkHmodW75KHz37PkHLjx9ius052mVtdDy4Pjp3Sfe7gO7puV+9/WDjcd07vSRGfHjIlZ6+PX9i/v3Nj46P+A2c/7w0rWzJ/ZO+jpd2b948eaiyIzjKeTeo5TOilI6K0rprIhJAwAopXmpjIVSCkDs+wQAiEkjhAgh2Vr9AUIIQigaQQjFpHVdt20bYzwJ400pxRjbtm0YRjSu63rsqJdz7nkeIWQSDtUVRVFVVdM0VVUV5ffgcs7lxEVRGIa+7zPGwjDF/6W/QZZlAACEMGq82VXebmVEIaWT++nhcIgxnoSJuMXt1k90sOeMrJXIvQAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:03.045" level="INFO">region:416,391,466,423</msg>
+<msg timestamp="20220127 20:10:03.046" level="INFO">Moving mouse to (441, 407)</msg>
+<msg timestamp="20220127 20:10:03.147" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:02.906" endtime="20220127 20:10:03.148"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.906" endtime="20220127 20:10:03.148"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.149" endtime="20220127 20:10:03.149"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.148" endtime="20220127 20:10:03.149"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.149" endtime="20220127 20:10:03.149"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.149" endtime="20220127 20:10:03.149"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.149" endtime="20220127 20:10:03.149"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.149" endtime="20220127 20:10:03.149"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.149" endtime="20220127 20:10:03.150"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.149" endtime="20220127 20:10:03.150"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.150"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.150"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.150"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.150"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.150"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.150"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.151"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.150" endtime="20220127 20:10:03.151"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.151"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.151"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.151"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.151"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.151"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.151"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.152"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.151" endtime="20220127 20:10:03.152"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.152" endtime="20220127 20:10:03.152"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.152" endtime="20220127 20:10:03.152"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:02.906" endtime="20220127 20:10:03.152"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:02.905" endtime="20220127 20:10:03.152"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:02.905" endtime="20220127 20:10:03.152"/>
+</iter>
+<iter>
+<var name="${num}">6</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.153" endtime="20220127 20:10:03.153"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.153" endtime="20220127 20:10:03.153"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.153" endtime="20220127 20:10:03.153"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.153" endtime="20220127 20:10:03.153"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.154" endtime="20220127 20:10:03.154"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.154" endtime="20220127 20:10:03.154"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.154" endtime="20220127 20:10:03.154"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.154" endtime="20220127 20:10:03.154"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.154" endtime="20220127 20:10:03.154"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.154" endtime="20220127 20:10:03.155"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:03.156" level="INFO">Resolving locator: alias:Calculator.Btn6</msg>
+<msg timestamp="20220127 20:10:03.157" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn6-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:03.302" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:03.302" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAuCAIAAAADYBZCAAAChUlEQVR4nO2ZTWjTYBjH3482tJBMD3nbaGBsEUcHoocJjoGnIYLFD9DDFMtuongQ3G2oDJR59Gsoc+BlIIPB9LKL6GWHHTxM2ApWh6tQgmmzaUlSa16XxsO0xOqYM+9IB/kd/4Qnv+TheSF5YKlUyufzkiQRQjiOA4FCKdV1XdM0RVF4nq/nsFKpWJal67ppmo7jBKgIAEAICYJACBEEASFUz2G1WnVd17Ztx3Fc1w1QEQAAIcQYcxznVQRrlkE5/Tto40uagO1hGQEAUEoLhUIzTA/GWBAEWZZjsZg3h4Zh5HI5SZJEUWySk6hYLKZSqWg0Ws9hNptd0w9QrgFVVS3LUhSlniDTNAkhATr9CSHEMAxvghzHCbzRDXAc1zAh22PGQ0t2hJbsCC3ZEWFUxym/ezU19WJ2frEk9o3cO9vK9PGZWNofng1dG1/uTKfPD/TvSshJ1h1iYPlt4cmtCZx58PCYHN346v/Ct6VbnpmY/oTl6cFzo59XW9q7T164eHrfDshCro5vy9Xcm6ydOHik78T+3XFzYfL+o8Hb8bHhNNOu+63lWisrVdTWkz58oGNPR9epK/3dtbmXs8s1Jna/8GsJo5EIdE3T+qkVI8kWUC4bbD9Gffcl3tYuuUvZt18BAADUyh+XvkRkOcF2yn1Xw3uPpju/z4zdfT63+P715J3x+Z29x3uEJpsegFrP3Lhpj4w+vX65DMVU79XhS4d4tpJMTnUkdmWGHmcYVFr3DltYmx2hJTtCS3aEluxAGGNKadAav0EpxRh7E8TzvK7rQQn9FV3Xvb/+AQAomUxqmqaqajO8UUqpqqqapkmS5M3DHcXmCXcUW8/2sAx3FJtnvR3FD0WiHVT2WOQsAAAAAElFTkSuQmCC" &gt;</msg>
+<msg timestamp="20220127 20:10:03.302" level="INFO">region:475,388,520,424</msg>
+<msg timestamp="20220127 20:10:03.303" level="INFO">Moving mouse to (497, 406)</msg>
+<msg timestamp="20220127 20:10:03.404" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:03.155" endtime="20220127 20:10:03.405"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:03.155" endtime="20220127 20:10:03.405"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.406" endtime="20220127 20:10:03.406"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.405" endtime="20220127 20:10:03.406"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.406" endtime="20220127 20:10:03.406"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.406" endtime="20220127 20:10:03.406"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.406" endtime="20220127 20:10:03.407"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.406" endtime="20220127 20:10:03.407"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.407" endtime="20220127 20:10:03.407"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.407" endtime="20220127 20:10:03.407"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.407" endtime="20220127 20:10:03.407"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.407" endtime="20220127 20:10:03.407"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.408" endtime="20220127 20:10:03.408"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.408" endtime="20220127 20:10:03.408"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.408" endtime="20220127 20:10:03.408"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.408" endtime="20220127 20:10:03.408"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.408" endtime="20220127 20:10:03.409"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.408" endtime="20220127 20:10:03.409"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:03.153" endtime="20220127 20:10:03.409"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:03.152" endtime="20220127 20:10:03.409"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:03.152" endtime="20220127 20:10:03.409"/>
+</iter>
+<iter>
+<var name="${num}">7</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.410" endtime="20220127 20:10:03.410"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.410" endtime="20220127 20:10:03.410"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.410" endtime="20220127 20:10:03.410"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.410" endtime="20220127 20:10:03.410"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.411"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.411"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.411"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.411"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.411"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.411"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.411"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.411" endtime="20220127 20:10:03.412"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:03.412" level="INFO">Resolving locator: alias:btn7_calculator</msg>
+<msg timestamp="20220127 20:10:03.413" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/btn7_calculator-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:03.586" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:03.586" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAArCAIAAACmUwxBAAACIElEQVR4nO2ZPWwTMRhA786JleGsqjRuTtyCQoGAYClIDEWV+BFLl3ZnqDplYWRFYkNCYmFhQ0Id6FikDgUhhY0yMkQZyMLh5iIPSLlTozi1jyFS7AZKobK5nHRvOn/yWe/sz/bJtvv9vpUdnLQF/o1c1yQFtcAYC4IgiiLOeVpCIwAACCHf90ulkhq3x1NtOBy2Wi3P88rlMoQwDUkJY4xS2u12a7VasVgcx6Vuu90efVBKhr+BEBLHcbVaHUdk7kZRhDFOw+pYMMa9Xk+NSF3Oeeo5MAGEcGIWZWxlyHVNkuuaJNc1SeHkKn+HIFsP1182D9UYXH68/eR26bhXToE2XQffe/Ti2oEYlXjn/fNnjfkbFzXvO9p0LTh3rjY3ehSdt68+/FisP13xNSebgdxNok+vN7/Mr23cr2hvXb+u2N990zi89WD1vL6RG6Ndl7d3d1pn7q4uzdi6m7b06/KvjY/EW75zuXhy3VOgWVcEe587s9dvLhhIBMvSrZv0ms0AXLp6wUzf6tbl+9++i7J/VufOcAS9g1a4Ut98V9fa5FEy9s+Q65ok1zVJrmsSqQsAYIylqPIrjDEAgBqRuq7rUkr/u9KfoJS6rqtGpG6lUgnDkBAyDX3MGCOEhGHoeZ4alwemQog4jiml03Ac7TgOQghjjBByHNmntnrzkyTJYDDgnCdJkoakxLZtAACEUHW1JnSnn8wuZJkgYzc/PwHaksSsuPuFdAAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:03.587" level="INFO">region:362,352,410,385</msg>
+<msg timestamp="20220127 20:10:03.587" level="INFO">Moving mouse to (386, 368)</msg>
+<msg timestamp="20220127 20:10:03.688" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:03.412" endtime="20220127 20:10:03.694"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:03.412" endtime="20220127 20:10:03.694"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.695" endtime="20220127 20:10:03.695"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.694" endtime="20220127 20:10:03.695"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.695" endtime="20220127 20:10:03.695"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.695" endtime="20220127 20:10:03.695"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.696"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.695" endtime="20220127 20:10:03.696"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.696"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.696"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.696"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.696"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.696"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.696"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.697" endtime="20220127 20:10:03.697"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.696" endtime="20220127 20:10:03.697"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:03.410" endtime="20220127 20:10:03.697"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:03.409" endtime="20220127 20:10:03.697"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:03.409" endtime="20220127 20:10:03.697"/>
+</iter>
+<status status="PASS" starttime="20220127 20:09:57.617" endtime="20220127 20:10:03.697"/>
+</for>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${operation}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.698" endtime="20220127 20:10:03.698"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.698" endtime="20220127 20:10:03.698"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.698" endtime="20220127 20:10:03.698"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.698" endtime="20220127 20:10:03.698"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.699" endtime="20220127 20:10:03.699"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.698" endtime="20220127 20:10:03.699"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.699" endtime="20220127 20:10:03.699"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.699" endtime="20220127 20:10:03.699"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.699" endtime="20220127 20:10:03.699"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.699" endtime="20220127 20:10:03.699"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.700" endtime="20220127 20:10:03.700"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.700" endtime="20220127 20:10:03.700"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.700" endtime="20220127 20:10:03.700"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.700" endtime="20220127 20:10:03.700"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.700" endtime="20220127 20:10:03.700"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.700" endtime="20220127 20:10:03.700"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.701" endtime="20220127 20:10:03.701"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.701" endtime="20220127 20:10:03.701"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.701" endtime="20220127 20:10:03.701"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.701" endtime="20220127 20:10:03.701"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.702" endtime="20220127 20:10:03.702"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.701" endtime="20220127 20:10:03.702"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.702" endtime="20220127 20:10:03.702"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.702" endtime="20220127 20:10:03.702"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:03.703" level="INFO">Resolving locator: alias:Calculator.Multiply</msg>
+<msg timestamp="20220127 20:10:03.703" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-multiply-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:03.867" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:03.867" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAsCAIAAAClnwxKAAAB9klEQVR4nO2YMWhUMRjHv5dcwxNetgv38CrcoHCDCkeX4qwgKOjeuaOKeJaKRcRD4VpUCg4O7s6FDg4WRHBop7Y6HMoh9Ej7jgjCvYfx8i73HFrEcxB8RPLA/JaQ5c+P5PtC+Dwp5Xg8TpJECBHHsdYarIIQopQyxiilnpQSALIsGw6HWussy+zKeZ6HMSaEIISO5IoJsi3wJwotVzpclFK9Xq8IDYExppRWq1Xf9z0pZZqmnU4nDMNyuUwIsSunlBJC9Pv9er3uSSm73e6hrF2tX+GcJ0mCACCOY8aYbZ8JGGODwQABgNba+m3+BiFEa13obnVyeXFyeXFyeXFyeTEjl+7v7u6nR5vh3vYHYeRvY0Tue2ftyeLt9sbBCNK99VZz6dmrzyMDuSUDGeCfmX9080vz8cKDnROfNg5m767MnTQRbKjmSscvNG+dH71b3/KvLl47VzYTa0hOR29Wn77Gsxdnvq0tP9/8OjaSaqbm3r+4s7xz6kb7/kKrPV9521p62S1OzdUvXX94+XSjOgVQu3JvZfrjsZqJYCNyMDXdaPzc+LWZs0ZS/4dH+B/h5PLi5PLi5PKCAABjrJSybTKBUgpjjAAgCAIhhG2fCYQQQRAgAKhUKlEUcc6LcH5KKc55FEVhGHpumv4XuGm6CQotV+hp+g/H3+v2ZMFMUQAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:03.868" level="INFO">region:529,389,571,423</msg>
+<msg timestamp="20220127 20:10:03.868" level="INFO">Moving mouse to (550, 406)</msg>
+<msg timestamp="20220127 20:10:03.968" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:03.702" endtime="20220127 20:10:03.969"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:03.702" endtime="20220127 20:10:03.970"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.970" endtime="20220127 20:10:03.970"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.970" endtime="20220127 20:10:03.970"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:03.698" endtime="20220127 20:10:03.971"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:03.697" endtime="20220127 20:10:03.971"/>
+</kw>
+<kw name="Extract Digit From" library="Number">
+<var>${number2_collection}</var>
+<arg>${number2}</arg>
+<msg timestamp="20220127 20:10:03.971" level="INFO">2</msg>
+<msg timestamp="20220127 20:10:03.971" level="INFO">${number2_collection} = ['2']</msg>
+<status status="PASS" starttime="20220127 20:10:03.971" endtime="20220127 20:10:03.971"/>
+</kw>
+<for flavor="IN">
+<var>${num}</var>
+<value>@{number2_collection}</value>
+<iter>
+<var name="${num}">2</var>
+<kw name="Press Button" library="desktop_tasks">
+<arg>${num}</arg>
+<if>
+<branch type="IF" condition="${btn1} == 5">
+<kw name="Click" library="RPA.Desktop">
+<arg>image:.images/btn5-path.png</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.973" endtime="20220127 20:10:03.973"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.972" endtime="20220127 20:10:03.973"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 1">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn1</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:03.973" endtime="20220127 20:10:03.973"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:03.973" endtime="20220127 20:10:03.973"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 2">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn2</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:03.974" level="INFO">Resolving locator: alias:Calculator.Btn2</msg>
+<msg timestamp="20220127 20:10:03.975" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/calculator-btn2-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:04.121" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:04.122" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAqCAIAAABtD9/kAAACVklEQVR4nO2ZTWjUQBSAJ5nNGCQjSDducK3ognYvglCR2oJXjx7Uk70UTz1U0INUCz1YPCmCCHVBiy4o6FFREUXP7VEFWdiuP4S0WYda2IQumTiJh63ZJq5/ODG7kO/2HmTmy+TNZJgRms0m6B3EpAX+jkwkppTqum5ZFmMsEaEACCHGOJ/Py7IcJIWNxeC6bqVS0TQtm80ihJKQbEMpJYTU6/VisShJUisZ0q3Vaq0XSsiwA4Zh2LZdKBRaYah2LctSVTUJq5+iqmqj0QjCkC5jLPEaiIAQ2jiLemxlSHXjJNWNk1Q3TqJ7hn/DXZ5/cPves4XFz1TODQwfGx8/OqAIHDvgqrv2+n7phT18/MxJDXx6Wb5zfRr2l88Oyr9/8k/hqrv5wMTNuYyUAQCAof2wOn/x3dslb7DAr+I41+66KwDAa6x8+Spv78/yrIW4ppqrP712t7pndOzwFq66fKdaC+fj40vnS0sjF66c2C3xbZq7rqs/mTlXWh6ZujxxqI/7t+Osu/ZmbnpWPzh1NQ5XwFnXqz8vP1zZN3Zk2+r7xVUAABDQ1h07+zZx64GrLvtQqTqWdeP0wvcM3DU6e+vUXsirB6660tDko1eTPFuM0mN7hlQ3TlLdOEl14ySkCyGklCal0hFKKYTtv0xIV1EUQsh/V/oVhBBFUYIwpJvL5UzTNAyjG8aYUmoYhmmamqYFydCBqed5tm0TQrrhOFoURYyxqqoYY1FcH1Yhcjfh+77jOIwx3/eTkGwjCAKEECEUuIIfdbucXl7Iup/05ocTHW9+vgE3WezBPz47NwAAAABJRU5ErkJggg==" &gt;</msg>
+<msg timestamp="20220127 20:10:04.122" level="INFO">region:416,430,464,462</msg>
+<msg timestamp="20220127 20:10:04.122" level="INFO">Moving mouse to (440, 446)</msg>
+<msg timestamp="20220127 20:10:04.227" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:03.974" endtime="20220127 20:10:04.230"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:03.974" endtime="20220127 20:10:04.230"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 3">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn3</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.231" endtime="20220127 20:10:04.231"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.231" endtime="20220127 20:10:04.231"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 4">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn4</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.231" endtime="20220127 20:10:04.231"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.231" endtime="20220127 20:10:04.231"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 6">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn6</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.231" endtime="20220127 20:10:04.231"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.231" endtime="20220127 20:10:04.231"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 7">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn7_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 8">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn8</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 9">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn9</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == 0">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Btn0</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.232"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '+'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_sum_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.233" endtime="20220127 20:10:04.233"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.232" endtime="20220127 20:10:04.233"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '-'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Minus</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.233" endtime="20220127 20:10:04.233"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.233" endtime="20220127 20:10:04.233"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '*'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Multiply</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.233" endtime="20220127 20:10:04.233"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.233" endtime="20220127 20:10:04.233"/>
+</branch>
+<branch type="ELSE IF" condition="${btn1} == '/'">
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:Calculator.Division</arg>
+<doc>Click at the element indicated by locator.</doc>
+<status status="NOT RUN" starttime="20220127 20:10:04.233" endtime="20220127 20:10:04.233"/>
+</kw>
+<status status="NOT RUN" starttime="20220127 20:10:04.233" endtime="20220127 20:10:04.233"/>
+</branch>
+<status status="PASS" starttime="20220127 20:10:03.972" endtime="20220127 20:10:04.233"/>
+</if>
+<status status="PASS" starttime="20220127 20:10:03.972" endtime="20220127 20:10:04.234"/>
+</kw>
+<status status="PASS" starttime="20220127 20:10:03.972" endtime="20220127 20:10:04.234"/>
+</iter>
+<status status="PASS" starttime="20220127 20:10:03.971" endtime="20220127 20:10:04.234"/>
+</for>
+<kw name="Click" library="RPA.Desktop">
+<arg>alias:btn_equal_calculator</arg>
+<doc>Click at the element indicated by locator.</doc>
+<msg timestamp="20220127 20:10:04.234" level="INFO">Resolving locator: alias:btn_equal_calculator</msg>
+<msg timestamp="20220127 20:10:04.235" level="INFO">Searching for image '/home/soumen/Robots/FirstRPA/.images/btn_equal_calculator-path.png' (region: display, confidence: 80.0)</msg>
+<msg timestamp="20220127 20:10:04.403" level="INFO">Found 1 match</msg>
+<msg timestamp="20220127 20:10:04.404" level="INFO" html="true">&lt;img alt="screenshot" class="rpaframework-desktop-screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAArCAIAAAAmIDtSAAAB30lEQVR4nO3bvy8DYRzH8X6v7dMO1xgQdEIqZitJJZIuVpPNfyAkCMGimz/C34BBYkD8SGwSLGoRiSqVIEjdud7X5opH/Ihvr9d8Xlv7PMM371yeuzRXKpVKIZBh+D1APUNcQZHKDxd3l7Or2a3c7qP16NdAAWLGzP6uvvnByc6mdu0Gejtz8/eFnsU0tUapMUqKqjdjYLHNfGPzlXMwsZ1saP28wTsWZlcWqCVitCmU/SFSZCRj1BKZW81qN3hxN3I71KyqNVj9oCa1mdvVLnlxn6wniuKa/TVS9PD8oF3C04IgxBWEuIIQVxDiCkJcQYgrCHEFIa4gxBWEuIIi32/xT7R5aj8z0vHuB4/y8eHQwNGJ49dMv1HTcV9ul4bXlmPvvyw9nwWibKjG44ac69zttd9D/F1Nx8WxIAjHgqSAHwt4FBOEuIIQVxDiCkJcQYgrCHEFIa4gL64ZM/mFfRwloNjmRDyhXfLiplO9XLSrNVL94Bs7nerVLnlxpzNjXHDcvMU2rt8fYZvdvMUFZyYzrt3gvZ/ruu5Z8Ty7vrh1uvfVm2VQKRE306m+qYHR7mSXYWjuXlT5hxNmtiyrXC4z4+L9HhGFw2GllLZs6ENc+F94FBOEuIIQVxDiCnoF8CGd9t1Rgu0AAAAASUVORK5CYII=" &gt;</msg>
+<msg timestamp="20220127 20:10:04.404" level="INFO">region:582,467,688,500</msg>
+<msg timestamp="20220127 20:10:04.405" level="INFO">Moving mouse to (635, 483)</msg>
+<msg timestamp="20220127 20:10:04.510" level="INFO">Performing mouse action: Action.click</msg>
+<status status="PASS" starttime="20220127 20:10:04.234" endtime="20220127 20:10:04.516"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 20:10:09.517" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220127 20:10:04.516" endtime="20220127 20:10:09.517"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:56.967" endtime="20220127 20:10:09.518"/>
+</kw>
+<status status="PASS" starttime="20220127 20:09:56.967" endtime="20220127 20:10:09.519"/>
+</test>
+<doc>Launch Google search and search the result.</doc>
+<status status="PASS" starttime="20220127 20:09:56.106" endtime="20220127 20:10:09.521"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220127 20:09:56.410" level="WARN">This is a deprecated import that will be removed in favor of RPA.Browser.Selenium</msg>
+</errors>
+</robot>
